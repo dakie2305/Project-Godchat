@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Project_Chat_Group</string>
+    <string name="project_name">Project God Chat</string>
+    <string name="Login_Btn">Login</string>
+    <string name="LoginAnounymous_Btn">Anonymous Login</string>
+
+    <string name="forget_pass"><u><b>Forgot your password?</b></u></string>
+
+    <string name="empty_username_pass">Please enter your username and password</string>
+    <string name="register_text"><u>Don\'t have an account? Register</u>s</string>
+
+    <string name="InputFirstName">Input First Name</string>
+    <string name="InputLastName">Input Last Name</string>
+    <string name="InputUserName">Input Username</string>
+    <string name="InputPassword">Input Password</string>
+    <string name="InputDOB">Input Date Of Birth</string>
+    <string name="InputEmail">Input Email</string>
+    <string name="RepeatEmail">Repeat Email</string>
+
+    <string name="welcome_msg1">Inspired by communication app, connecting people via internet such as Zalo, Messenger, etc. GodChat Project was born in order to connecting people with better effiency.</string>
+    <string name="welcome_msg2">With improved anonymous login features and Dark Mode support for those with weak eyes, Godchat is the best choice in Vietnam Internet Community</string>
+    <string name="welcome_msg3">Besides good features like real time communicating, Godchat also have the anonymous features to hide real identity of user, so that they can show their true color without worrying about exposing their secret. And Dark Mode is good also.</string>
+
+    <string name="creating_account">Creating account...</string>
+    <string name="please_wait">Please wait for a minute...</string>
+
+
+</resources>

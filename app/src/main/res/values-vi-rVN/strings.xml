@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Project_Chat_Group</string>
+    <string name="project_name">Dự Án God Chat</string>
+    <string name="Login_Btn">Đăng nhập</string>
+    <string name="LoginAnounymous_Btn">Đăng Nhập Ẩn Danh</string>
+
+    <string name="empty_username_pass">Xin hãy nhập username và password</string>
+    <string name="register_text"><u>Không có tài khoản?</u></string>
+
+    <string name="InputFirstName">Nhập Tên</string>
+    <string name="InputLastName">Nhập Họ</string>
+    <string name="InputUserName">Nhập Username</string>
+    <string name="InputPassword">Nhập Mật Khẩu</string>
+    <string name="InputDOB">Nhập Ngày Sinh</string>
+    <string name="InputEmail">Nhập Email</string>
+    <string name="RepeatEmail">Nhập Lại Email</string>
+
+    <string name="welcome_msg1">Lấy cảm hứng từ các phần mềm giao tiếp, kết nối mạng xã hội như Zalo, Messenger. Godchat ra đời vì mục đích kết nối con người với nhau.</string>
+    <string name="welcome_msg2">Với tính năng chat ẩn danh nổi trội và hỗ trợ Dark Mode, Godchat là lựa chọn hàng đầu của cộng đồng mạng Việt Nam</string>
+    <string name="welcome_msg3">Ngoài chức năng nổi trội như chat trực tuyến, Godchat còn cá khả năng ẩn danh người dùng để thoải mái bộc lộ cá tính mà không sợ lộ danh tính. Và chế độ dark mode cũng tốt không kém.</string>
+    <string name="forget_pass">Quên mật khẩu?</string>
+
+    <string name="creating_account">Đang tạo tài khoản...</string>
+    <string name="please_wait">Phải đợi một chút...</string>
+
+
+
+</resources>

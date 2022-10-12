@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/drawable/corner_rounded_button.xml" value="0.127" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/drawable/custom_button.xml" value="0.2035" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/drawable/dark_mode_button.xml" value="0.168" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/drawable/switch_track.xml" value="0.168" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_dark_mode.xml" value="0.17119565217391305" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_fullscreen_logo_laucher.xml" value="0.24010416666666667" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_get_started.xml" value="0.18885869565217392" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_getting_started.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_getting_started_alternative.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_getting_started_alternative2.xml" value="0.18489583333333334" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_getting_started_alternative3.xml" value="0.18489583333333334" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_launcher.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_login_page.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/activity_register_account.xml" value="0.264" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/imageviewer.xml" value="0.17119565217391305" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/item.xml" value="0.182518115942029" />
+        <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/slide_item_container.xml" value="0.18885869565217392" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GettingStartedAlternativeActivity">
+
+    <TextView
+        android:id="@+id/project_name"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/project_name"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_slider_1" />
+
+    <ImageView
+        android:id="@+id/img_slider_1"
+        android:layout_width="286dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_slider3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="334dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="@string/welcome_msg3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/project_name" />
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:text="Ok"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
