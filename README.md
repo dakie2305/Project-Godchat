@@ -3,14 +3,14 @@
 
  Godchat là app open-source với chức năng chính là nhắn tin với nhau thời gian thực. Repo này sẽ chứa source code của app Godchat xây dựng trên nền tảng Android. GitHub repository hiện tại chỉ mới hỗ trợ Android.
 
-![messenger](https://i.imgur.com/I56iNDH.png)
+![messenger](https://i.imgur.com/if6haHA.png)
 
 
 ### Tính năng hiện tại
 - Nhắn tin một-một với người dùng and tạo nhóm chat nhiều người dùng
 - Đăng nhập ẩn danh
 - Chế độ tối
-- Hỗ trợ nhiều định dạng (văn bản, hình ảnh, video, audio, chia sẽ các files khác)
+
 
 
 Nhiều tính năng mới sẽ được cập nhật thêm sau (Nếu tôi đủ trình độ).
@@ -52,7 +52,7 @@ Build lại rất đơn giản:
 
 Đăng nhập bằng cách tạo tài khoản, hoặc dùng đăng nhập ẩn danh để sử dụng mà không lo phải tạo tài khoản hay lộ thông tin cá nhân.
 
-## Liên hệ
+## Credit
 
 - [Thanh Đức - Developer](https://www.facebook.com/darkie2305/) 
 - [Trung Kiên - Phân Tích Thiết Kế](https://www.facebook.com/profile.php?id=100021623772810)
