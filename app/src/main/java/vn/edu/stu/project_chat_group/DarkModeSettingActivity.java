@@ -24,7 +24,6 @@ public class DarkModeSettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dark_mode_setting);
 
-
         addControls();
         addEvents();
     }
@@ -46,11 +45,8 @@ public class DarkModeSettingActivity extends AppCompatActivity {
             }
         });
 
-        boolean checkDarkMode = checkIfDarkModeOrNot();//Kiểm tra xem theme hiện tại đang là gì
-        if (checkDarkMode==true)
-            radOn.setChecked(true);
-        else
-            radOff.setChecked(false);
+        checkIfDarkModeOrNot();//Kiểm tra xem theme hiện tại đang là gì
+
 
         //Check lựa chọn dark mode hay không, hay theo hệ thống
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -77,25 +73,19 @@ public class DarkModeSettingActivity extends AppCompatActivity {
         });
 
     }
-//chưa hoạt động được
-    private boolean checkIfDarkModeOrNot() {
-        int defaultNightMode = AppCompatDelegate.getDefaultNightMode();
-        if (defaultNightMode == AppCompatDelegate.MODE_NIGHT_YES) {
-            return true;
-        }
-        if (defaultNightMode == AppCompatDelegate.MODE_NIGHT_NO) {
-            return false;
-        }
-        int modeType = getResources().getConfiguration().uiMode;
-        switch (modeType){
-            case Configuration.UI_MODE_NIGHT_NO:
-                return false;
+
+    private void checkIfDarkModeOrNot() {
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
             case Configuration.UI_MODE_NIGHT_YES:
-                return true;
+                radOn.setChecked(true);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                radOff.setChecked(true);
+                break;
             case Configuration.UI_MODE_NIGHT_UNDEFINED:
-                return false;
+                break;
         }
-        return false;
     }
 
     private void openSettingActivity() {
