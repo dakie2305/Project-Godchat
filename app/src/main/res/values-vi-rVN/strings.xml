@@ -31,7 +31,7 @@
     <!--Setting Activity-->
     <string name="acc_setting">Cài Đặt Tài Khoản</string>
     <string name="manage_info">Quản lý thông tin cá nhân chung</string>
-    <string name="acc_owner">Quyền sỡ hữu tài khoản</string>
+    <string name="acc_owner">Thông báo</string>
     <string name="Personal_account_information">Thông tin tài khoản cá nhân</string>
     <string name="pass_security">Mật khẩu và bảo mật</string>
     <string name="Privacy_Setting">Cài đặt riêng tư</string>
@@ -50,6 +50,18 @@
     <!--Language Activity-->
     <string name="vietnamese_lang">Tiếng Việt</string>
     <string name="english_lang">Tiếng Anh</string>
+    <!--Notification Activity-->
+    <string name="ringtone">Ringtone</string>
+    <string name="customize_noti">Tuỳ chỉnh thông báo</string>
+    <string name="customize_noti_sub">Âm thanh và lựa chọn</string>
+    <string name="notification_preview">Xem trước thông báo</string>
+    <string name="notification_preview_sub">Hiện tên và tin nhắn</string>
+    <string name="new_friend_noti">Thông báo từ bạn mới</string>
+    <string name="new_friend_noti_sub">Tạo một khung chat khi kết bạn mới</string>
+    <string name="vibrate">Rung</string>
+    <string name="vibrate_sub">Rung khi gọi</string>
+    <string name="inapp_sounds">Âm thanh</string>
+    <string name="inapp_sounds_sub">Bật âm thanh</string>
 
 
 </resources>

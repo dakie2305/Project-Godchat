@@ -10,7 +10,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private MaterialButton btnDarkMode, btnLanguageChange;
+    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class SettingActivity extends AppCompatActivity {
     private void addControls() {
         btnDarkMode = findViewById(R.id.btnDarkModeToggle); //setting chỉnh dark mode
         btnLanguageChange = findViewById(R.id.btnLanguage); //setting chỉnh ngôn ngữ
+        btnNoti = findViewById(R.id.btnNotification); //setting chỉnh thông báo
     }
     private void addEvents() {
         btnDarkMode.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +40,17 @@ public class SettingActivity extends AppCompatActivity {
                 openLanguageChangeSetting();
             }
         });
+        btnNoti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNotificationSetting();
+            }
+        });
+    }
+
+    private void openNotificationSetting() {
+        Intent intent = new Intent(SettingActivity.this, NotificationActivity.class);
+        startActivity(intent);
     }
 
     private void openLanguageChangeSetting() {

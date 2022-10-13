@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Project_Chat_Group"
         tools:targetApi="31">
         <activity
+            android:name=".RingtoneSelectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".LanguageChangeActivity"
             android:exported="false" />
         <activity

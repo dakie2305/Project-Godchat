@@ -37,7 +37,7 @@
                 android:textAlignment="textStart"
                 android:textSize="11dp"
                 android:textColor="@color/cardview_dark_background"
-                android:id="@+id/btnAccountInformation"
+                android:id="@+id/btnNotification"
                 app:icon="@drawable/ownership"
                 app:iconSize="18dp"
                 app:iconTint="@color/cardview_dark_background"

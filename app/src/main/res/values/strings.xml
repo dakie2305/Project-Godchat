@@ -31,7 +31,7 @@
     <!--Setting Activity-->
     <string name="acc_setting">Account Setting</string>
     <string name="manage_info">Manage information about you and your account in general</string>
-    <string name="acc_owner">Account ownership</string>
+    <string name="acc_owner">Notification</string>
     <string name="Personal_account_information">Personal account information</string>
     <string name="pass_security">Password and security</string>
     <string name="Privacy_Setting">Privacy Setting</string>
@@ -49,5 +49,18 @@
     <!--Language Activity-->
     <string name="vietnamese_lang">Vietnamese</string>
     <string name="english_lang">English</string>
+    <!--Notification Activity-->
+    <string name="ringtone">Ringtone</string>
+    <string name="customize_noti">Customise notifications</string>
+    <string name="customize_noti_sub">Sounds and appearance options</string>
+    <string name="notification_preview">Notification preview</string>
+    <string name="notification_preview_sub">Show name and message</string>
+    <string name="new_friend_noti">New friend notification</string>
+    <string name="new_friend_noti_sub">Get a new chat thread when you add new friend</string>
+    <string name="vibrate">Vibration</string>
+    <string name="vibrate_sub">Vibration on call</string>
+    <string name="inapp_sounds">In-app sounds</string>
+    <string name="inapp_sounds_sub">Enable in-app sounds</string>
+
 
 </resources>
