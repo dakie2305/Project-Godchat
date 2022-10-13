@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">Project_Chat_Group</string>
+    <!--LoginPage Activity-->
     <string name="project_name">Project God Chat</string>
     <string name="Login_Btn">Login</string>
     <string name="LoginAnounymous_Btn">Anonymous Login</string>
-
     <string name="forget_pass"><u><b>Forgot your password?</b></u></string>
-
     <string name="empty_username_pass">Please enter your username and password</string>
     <string name="register_text"><u>Don\'t have an account? Register</u>s</string>
-
+    <!--Register Activity-->
     <string name="InputFirstName">Input First Name</string>
     <string name="InputLastName">Input Last Name</string>
     <string name="InputUserName">Input Username</string>
@@ -16,13 +15,39 @@
     <string name="InputDOB">Input Date Of Birth</string>
     <string name="InputEmail">Input Email</string>
     <string name="RepeatEmail">Repeat Email</string>
-
+    <!--Getting Started Alternative 1,2,3 Activity-->
     <string name="welcome_msg1">Inspired by communication app, connecting people via internet such as Zalo, Messenger, etc. GodChat Project was born in order to connecting people with better effiency.</string>
     <string name="welcome_msg2">With improved anonymous login features and Dark Mode support for those with weak eyes, Godchat is the best choice in Vietnam Internet Community</string>
     <string name="welcome_msg3">Besides good features like real time communicating, Godchat also have the anonymous features to hide real identity of user, so that they can show their true color without worrying about exposing their secret. And Dark Mode is good also.</string>
-
+    <!--Creating account log-->
     <string name="creating_account">Creating account...</string>
     <string name="please_wait">Please wait for a minute...</string>
+    <!--Dark Mode Setting Activity-->
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="Use_system_settings">Use system settings</string>
+    <string name="based_on_setting">We\'ll adjust your appearance based on your device\'s system.</string>
 
+    <!--Setting Activity-->
+    <string name="acc_setting">Account Setting</string>
+    <string name="manage_info">Manage information about you and your account in general</string>
+    <string name="acc_owner">Account ownership</string>
+    <string name="Personal_account_information">Personal account information</string>
+    <string name="pass_security">Password and security</string>
+    <string name="Privacy_Setting">Privacy Setting</string>
+    <string name="control_privacy">Control your own privacy, who can see what you post</string>
+    <string name="Stories">Stories</string>
+    <string name="Profil_Information">Profile Information</string>
+    <string name="Profile_and_tagging">Profile and tagging</string>
+    <string name="pictures">Pictures</string>
+    <string name="Contents">Contents</string>
+    <string name="Preferences_Setting">Preferences Setting</string>
+    <string name="Customize_your_own">Customize your own experience</string>
+    <string name="Dark_mode">Dark Mode</string>
+    <string name="Shortcut">Shortcut</string>
+    <string name="Language">Language</string>
+    <!--Language Activity-->
+    <string name="vietnamese_lang">Vietnamese</string>
+    <string name="english_lang">English</string>
 
 </resources>

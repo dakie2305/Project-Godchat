@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project_Chat_Group</string>
+    <!--LoginPage Activity-->
     <string name="project_name">Dự Án God Chat</string>
     <string name="Login_Btn">Đăng nhập</string>
     <string name="LoginAnounymous_Btn">Đăng Nhập Ẩn Danh</string>
-
     <string name="empty_username_pass">Xin hãy nhập username và password</string>
     <string name="register_text"><u>Không có tài khoản?</u></string>
-
+    <!--Register Activity-->
     <string name="InputFirstName">Nhập Tên</string>
     <string name="InputLastName">Nhập Họ</string>
     <string name="InputUserName">Nhập Username</string>
@@ -15,15 +15,41 @@
     <string name="InputDOB">Nhập Ngày Sinh</string>
     <string name="InputEmail">Nhập Email</string>
     <string name="RepeatEmail">Nhập Lại Email</string>
-
+    <!--Getting Started Alternative 1,2,3 Activity-->
     <string name="welcome_msg1">Lấy cảm hứng từ các phần mềm giao tiếp, kết nối mạng xã hội như Zalo, Messenger. Godchat ra đời vì mục đích kết nối con người với nhau.</string>
     <string name="welcome_msg2">Với tính năng chat ẩn danh nổi trội và hỗ trợ Dark Mode, Godchat là lựa chọn hàng đầu của cộng đồng mạng Việt Nam</string>
     <string name="welcome_msg3">Ngoài chức năng nổi trội như chat trực tuyến, Godchat còn cá khả năng ẩn danh người dùng để thoải mái bộc lộ cá tính mà không sợ lộ danh tính. Và chế độ dark mode cũng tốt không kém.</string>
     <string name="forget_pass">Quên mật khẩu?</string>
-
+    <!--Creating account log-->
     <string name="creating_account">Đang tạo tài khoản...</string>
     <string name="please_wait">Phải đợi một chút...</string>
+    <!--Dark Mode Setting Activity-->
+    <string name="on">Bật</string>
+    <string name="off">Tắt</string>
+    <string name="Use_system_settings">Dùng cài đặt hệ thống</string>
+    <string name="based_on_setting">Chúng tôi sẽ điều chỉnh dựa trên cài đặt hệ thống trên thiết bị của bạn.</string>
+    <!--Setting Activity-->
+    <string name="acc_setting">Cài Đặt Tài Khoản</string>
+    <string name="manage_info">Quản lý thông tin cá nhân chung</string>
+    <string name="acc_owner">Quyền sỡ hữu tài khoản</string>
+    <string name="Personal_account_information">Thông tin tài khoản cá nhân</string>
+    <string name="pass_security">Mật khẩu và bảo mật</string>
+    <string name="Privacy_Setting">Cài đặt riêng tư</string>
+    <string name="control_privacy">Kiểm soát quyền riêng tư tài khoản của bạn, ai có thể tìm thấy bạn</string>
+    <string name="Stories">Stories</string>
+    <string name="Profil_Information">Thông Tin Cá Nhân</string>
+    <string name="Profile_and_tagging">Profile và gắn thẻ</string>
+    <string name="pictures">Ảnh</string>
+    <string name="Contents">Nội dung</string>
+    <string name="Preferences_Setting">Cài đặt cá nhân</string>
+    <string name="Customize_your_own">Tinh chỉnh cài đặt theo trải nghiệm cá nhân</string>
+    <string name="Dark_mode">Chế độ tối</string>
+    <string name="Shortcut">Lối tắt</string>
+    <string name="Language">Ngôn ngữ</string>
 
+    <!--Language Activity-->
+    <string name="vietnamese_lang">Tiếng Việt</string>
+    <string name="english_lang">Tiếng Anh</string>
 
 
 </resources>

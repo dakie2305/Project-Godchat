@@ -17,12 +17,20 @@
         android:theme="@style/Theme.Project_Chat_Group"
         tools:targetApi="31">
         <activity
+            android:name=".LanguageChangeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DarkModeSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginPageActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterAccountActivity"
             android:exported="false" />
-
         <activity
             android:name=".GettingStartedAlternative3Activity"
             android:exported="false" />
@@ -37,6 +45,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

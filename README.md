@@ -10,6 +10,7 @@
 - Nhắn tin một-một với người dùng and tạo nhóm chat nhiều người dùng
 - Đăng nhập ẩn danh
 - Chế độ tối
+- Đa ngôn ngữ (Anh - Việt)
 
 
 

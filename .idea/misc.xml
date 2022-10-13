@@ -21,8 +21,14 @@
         <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/imageviewer.xml" value="0.17119565217391305" />
         <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/item.xml" value="0.182518115942029" />
         <entry key="..\:/AndroidProjects/Project_Chat_Group/app/src/main/res/layout/slide_item_container.xml" value="0.18885869565217392" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/drawable/ic_keyboard_arrow_left.xml" value="0.2495" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_dark_mode_setting.xml" value="0.24010416666666667" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_getting_started_alternative2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_language_change.xml" value="0.4" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_login_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_register_account.xml" value="0.21920289855072464" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_setting.xml" value="0.4" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
