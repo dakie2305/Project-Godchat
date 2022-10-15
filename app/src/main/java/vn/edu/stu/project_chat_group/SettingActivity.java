@@ -10,7 +10,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti;
+    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class SettingActivity extends AppCompatActivity {
         btnDarkMode = findViewById(R.id.btnDarkModeToggle); //setting chỉnh dark mode
         btnLanguageChange = findViewById(R.id.btnLanguage); //setting chỉnh ngôn ngữ
         btnNoti = findViewById(R.id.btnNotification); //setting chỉnh thông báo
+        btnPersonalAccountMange = findViewById(R.id.btnPersonalAccountMange); //setting chỉnh thông tin tài khoản
     }
     private void addEvents() {
         btnDarkMode.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +47,17 @@ public class SettingActivity extends AppCompatActivity {
                 openNotificationSetting();
             }
         });
+        btnPersonalAccountMange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPersonalAccountManageSetting();
+            }
+        });
+    }
+
+    private void openPersonalAccountManageSetting() {
+        Intent intent = new Intent(SettingActivity.this, PersonalInformationSettingActivity.class);
+        startActivity(intent);
     }
 
     private void openNotificationSetting() {

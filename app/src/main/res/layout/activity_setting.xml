@@ -50,7 +50,7 @@
                 android:textAlignment="textStart"
                 android:textSize="11dp"
                 android:textColor="@color/cardview_dark_background"
-                android:id="@+id/btnAccountMange"
+                android:id="@+id/btnPersonalAccountMange"
                 app:icon="@drawable/personal_information_setting"
                 app:iconSize="18dp"
                 app:iconTint="@color/cardview_dark_background"

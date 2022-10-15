@@ -28,10 +28,18 @@
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_language_change.xml" value="0.4" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_login_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_personal_information_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_register_account.xml" value="0.21920289855072464" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_ringtone_select.xml" value="0.264" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_setting.xml" value="0.4" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/drawable/border.xml" value="0.2495" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_full_name_setting.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_personal_information_setting.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_register_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_ringtone_select.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_setting.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

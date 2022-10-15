@@ -61,6 +61,19 @@
     <string name="vibrate_sub">Vibration on call</string>
     <string name="inapp_sounds">In-app sounds</string>
     <string name="inapp_sounds_sub">Enable in-app sounds</string>
+    <!--Personal Account Information Activity-->
+    <string name="Full_Name">Full Name</string>
+    <string name="Contact_Info">Contact Info</string>
+    <string name="Contact_Info_Sub">Manage your phone numbers and email addresses</string>
+    <string name="Identity_Confirmation">Identity Confirmation</string>
+    <string name="Identity_Confirmation_Sub">Confirm your identity on Godchat</string>
+    <!--Fullname Setting Activity-->
+    <string name="First_Name">First Name</string>
+    <string name="Middle_Name">Middle Name</string>
+    <string name="Family_Name">Family Name</string>
+    <string name="Please_Note"><b>Please Note:</b> If you change your name here, you can not change it again for 15 days. Please be aware, your name will have to comply to community standards</string>
+    <string name="Commit_Change">Commit Change</string>
+    <string name="Cancel">Cancel</string>
 
 
 </resources>
