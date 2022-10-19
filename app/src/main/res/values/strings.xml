@@ -15,6 +15,7 @@
     <string name="InputDOB">Input Date Of Birth</string>
     <string name="InputEmail">Input Email</string>
     <string name="RepeatEmail">Repeat Email</string>
+    <string name="invalid_email">Invalid Email</string>
     <!--Getting Started Alternative 1,2,3 Activity-->
     <string name="welcome_msg1">Inspired by communication app, connecting people via internet such as Zalo, Messenger, etc. GodChat Project was born in order to connecting people with better effiency.</string>
     <string name="welcome_msg2">With improved anonymous login features and Dark Mode support for those with weak eyes, Godchat is the best choice in Vietnam Internet Community</string>
@@ -74,6 +75,13 @@
     <string name="Please_Note"><b>Please Note:</b> If you change your name here, you can not change it again for 15 days. Please be aware, your name will have to comply to community standards</string>
     <string name="Commit_Change">Commit Change</string>
     <string name="Cancel">Cancel</string>
-
-
+    <!--Password and Security Setting Activity-->
+    <string name="Change_Password">Change Password</string>
+    <string name="Change_Password_Sub">It is good idea to use a strong password that you do not use elsewhere</string>
+    <string name="Saved_Login">Save Login Information</string>
+    <string name="Saved_Login_Sub">This option will save your login so you can quickly login</string>
+    <!--Change Password Setting Activity-->
+    <string name="Current_password">Current Password</string>
+    <string name="New_password">New Password</string>
+    <string name="Retype_New_password">Retype New Password</string>
 </resources>

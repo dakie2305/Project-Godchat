@@ -1,8 +1,5 @@
 package vn.edu.stu.project_chat_group;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -17,15 +14,36 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginPageActivity extends AppCompatActivity {
 
-    private Button btnAnonLogin, btnLogin;
+    private Button btnAnonLogin, btnLogin, btnGoogleLogin;
     private TextView textViewRegister;
     private SwitchMaterial switchMaterial;
     private EditText etUsername, etPassword;
     private ProgressDialog loadingBar;
+
+    GoogleSignInClient googleSignInClient;
+    FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +54,19 @@ public class LoginPageActivity extends AppCompatActivity {
         addEvents();
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
     private void addControls() {
         textViewRegister = findViewById(R.id.tvRegister);
         btnAnonLogin = (Button) findViewById(R.id.btnAnonymousLogin); //nút đăng nhập ẩn danh
         btnLogin= findViewById(R.id.btnLogin); //nút đăng nhập bình thường
         switchMaterial = findViewById(R.id.switchDarkMode);//Nút switch dark mode
+        btnGoogleLogin = findViewById(R.id.btnGoogleLogin);
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
 
@@ -48,6 +74,27 @@ public class LoginPageActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_SIGN_IN
+        ).requestIdToken("648782678538-qmdqfq0gtqsk0kl0dlfsc0565tomg47c.apps.googleusercontent.com") //copy từ client id trong google services
+                .requestEmail()
+                .build();
+        // Bắt đầu đăng nhập
+        googleSignInClient= GoogleSignIn.getClient(LoginPageActivity.this
+                ,googleSignInOptions);
+        // Initialize firebase auth
+        firebaseAuth=FirebaseAuth.getInstance();
+        // Initialize firebase user
+        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+        // Check condition
+        if(firebaseUser!=null)
+        {
+            // When user already sign in
+            // redirect to profile activity
+            startActivity(new Intent(LoginPageActivity.this,ProfileIDActivity.class)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+
         //Đăng ký
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +114,10 @@ public class LoginPageActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Dùng để lưu theme dark mode
+
+
         //Đăng nhập ẩn danh
         btnAnonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,8 +173,87 @@ public class LoginPageActivity extends AppCompatActivity {
             }
         });
 
+        btnGoogleLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= googleSignInClient.getSignInIntent();
+                // Start activity for result
+                startActivityForResult(intent,100);
+            }
+        });
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==100)
+        {
+            // When request code is equal to 100
+            // Initialize task
+            Task<GoogleSignInAccount> signInAccountTask=GoogleSignIn
+                    .getSignedInAccountFromIntent(data);
+
+            // check condition
+            if(signInAccountTask.isSuccessful())
+            {
+                // When google sign in successful
+                // Initialize string
+                String s="Google sign in successful";
+                // Display Toast
+                displayToast(s);
+                // Initialize sign in account
+                try {
+                    // Initialize sign in account
+                    GoogleSignInAccount googleSignInAccount=signInAccountTask
+                            .getResult(ApiException.class);
+                    // Check condition
+                    if(googleSignInAccount!=null)
+                    {
+                        // When sign in account is not equal to null
+                        // Initialize auth credential
+                        AuthCredential authCredential= GoogleAuthProvider
+                                .getCredential(googleSignInAccount.getIdToken()
+                                        ,null);
+                        // Check credential
+                        firebaseAuth.signInWithCredential(authCredential)
+                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        // Check condition
+                                        if(task.isSuccessful())
+                                        {
+                                            // When task is successful
+                                            // Redirect to profile activity
+                                            startActivity(new Intent(LoginPageActivity.this
+                                                    ,ProfileIDActivity.class)
+                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                            // Display Toast
+                                            displayToast("Firebase authentication successful");
+                                        }
+                                        else
+                                        {
+                                            // When task is unsuccessful
+                                            // Display Toast
+                                            displayToast("Authentication Failed :"+task.getException()
+                                                    .getMessage());
+                                        }
+                                    }
+                                });
+
+                    }
+                }
+                catch (ApiException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void displayToast(String s) {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+    }
 
     private void openRegisterActivity() {
         Intent intent = new Intent(LoginPageActivity.this, RegisterAccountActivity.class);
@@ -134,4 +264,5 @@ public class LoginPageActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginPageActivity.this,GettingStartedAlternativeActivity.class);
         startActivity(intent);
     }
+
 }

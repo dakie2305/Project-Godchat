@@ -106,7 +106,7 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="Username"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textColor="#A8A3A3"
         app:layout_constraintEnd_toEndOf="parent"

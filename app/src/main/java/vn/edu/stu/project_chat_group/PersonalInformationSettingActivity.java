@@ -1,17 +1,17 @@
 package vn.edu.stu.project_chat_group;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.button.MaterialButton;
 
 public class PersonalInformationSettingActivity extends AppCompatActivity {
-    MaterialButton btnChangeName;
+    MaterialButton btnChangeName, btnBack;
     TextView tvFullName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class PersonalInformationSettingActivity extends AppCompatActivity {
     private void addControls() {
         btnChangeName = findViewById(R.id.btnFullNameChange);
         tvFullName = findViewById(R.id.tvFullNameSetting);
+        btnBack = findViewById(R.id.btnBack);
     }
     private void addEvents() {
         btnChangeName.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +36,14 @@ public class PersonalInformationSettingActivity extends AppCompatActivity {
                 openFullNameChangeSetting();
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
+
 
     private void openFullNameChangeSetting() {
         Intent intent = new Intent(PersonalInformationSettingActivity.this, FullNameSettingActivity.class);

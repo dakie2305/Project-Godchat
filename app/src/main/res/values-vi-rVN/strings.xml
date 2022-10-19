@@ -15,6 +15,7 @@
     <string name="InputDOB">Nhập Ngày Sinh</string>
     <string name="InputEmail">Nhập Email</string>
     <string name="RepeatEmail">Nhập Lại Email</string>
+    <string name="invalid_email">Email không hợp lệ</string>
     <!--Getting Started Alternative 1,2,3 Activity-->
     <string name="welcome_msg1">Lấy cảm hứng từ các phần mềm giao tiếp, kết nối mạng xã hội như Zalo, Messenger. Godchat ra đời vì mục đích kết nối con người với nhau.</string>
     <string name="welcome_msg2">Với tính năng chat ẩn danh nổi trội và hỗ trợ Dark Mode, Godchat là lựa chọn hàng đầu của cộng đồng mạng Việt Nam</string>
@@ -62,6 +63,27 @@
     <string name="vibrate_sub">Rung khi gọi</string>
     <string name="inapp_sounds">Âm thanh</string>
     <string name="inapp_sounds_sub">Bật âm thanh</string>
-
+    <!--Personal Account Information Activity-->
+    <string name="Full_Name">Tên</string>
+    <string name="Contact_Info">Thông Tin Liên Lạc</string>
+    <string name="Contact_Info_Sub">Quản lý số điện thoại và email</string>
+    <string name="Identity_Confirmation">Xác thực danh tính</string>
+    <string name="Identity_Confirmation_Sub">Xác thực danh tính trên Godchat</string>
+    <!--Fullname Setting Activity-->
+    <string name="First_Name">Tên</string>
+    <string name="Middle_Name">Tên Lót</string>
+    <string name="Family_Name">Họ</string>
+    <string name="Please_Note"><b>Xin lưu ý:</b> nếu bạn đổi tên, bạn sẽ không thể đổi lại được trong 15 ngày. Và hãy chú ý rằng, tên mới của bạn phải tuân theo tiêu chuẩn cộng đồng</string>
+    <string name="Commit_Change">Lưu</string>
+    <string name="Cancel">Huỷ</string>
+    <!--Password and Security Setting Activity-->
+    <string name="Change_Password">Thay đổi mật khẩu</string>
+    <string name="Change_Password_Sub">Tốt nhất nên thay đổi thành một mật khẩu mà bạn chưa từng dùng ở bất kỳ đâu</string>
+    <string name="Saved_Login">Lưu đăng nhập</string>
+    <string name="Saved_Login_Sub">Cài đặt này sẽ lưu đăng nhập để bạn vào nhanh hơn</string>
+    <!--Change Password Setting Activity-->
+    <string name="Current_password">Mật khẩu hiện tại</string>
+    <string name="New_password">Mật khẩu mới</string>
+    <string name="Retype_New_password">Nhập lại mật khẩu mới </string>
 
 </resources>

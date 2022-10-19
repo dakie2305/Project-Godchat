@@ -1,16 +1,16 @@
 package vn.edu.stu.project_chat_group;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange;
+    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange, btnPasswordManage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class SettingActivity extends AppCompatActivity {
         btnLanguageChange = findViewById(R.id.btnLanguage); //setting chỉnh ngôn ngữ
         btnNoti = findViewById(R.id.btnNotification); //setting chỉnh thông báo
         btnPersonalAccountMange = findViewById(R.id.btnPersonalAccountMange); //setting chỉnh thông tin tài khoản
+        btnPasswordManage = findViewById(R.id.btnPasswordManage); //setting chỉnh sửa mật khẩu và bảo mậts
     }
     private void addEvents() {
         btnDarkMode.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,17 @@ public class SettingActivity extends AppCompatActivity {
                 openPersonalAccountManageSetting();
             }
         });
+        btnPasswordManage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPasswordChangeActivity();
+            }
+        });
+    }
+
+    private void openPasswordChangeActivity() {
+        Intent intent = new Intent(SettingActivity.this, PasswordAndSecuritySettingActivity.class);
+        startActivity(intent);
     }
 
     private void openPersonalAccountManageSetting() {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648782678538",
+    "project_id": "godchat-62396",
+    "storage_bucket": "godchat-62396.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648782678538:android:e18bff478c7bf5573aedf3",
+        "android_client_info": {
+          "package_name": "vn.edu.stu.project_chat_group"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648782678538-qmdqfq0gtqsk0kl0dlfsc0565tomg47c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUF3h_up5iCjb9CbjPY3_oSs7lsDHzuBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648782678538-qmdqfq0gtqsk0kl0dlfsc0565tomg47c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
