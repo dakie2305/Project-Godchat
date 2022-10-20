@@ -85,5 +85,8 @@
     <string name="Current_password">Mật khẩu hiện tại</string>
     <string name="New_password">Mật khẩu mới</string>
     <string name="Retype_New_password">Nhập lại mật khẩu mới </string>
+    <!--Identity Confirmation Setting Activity-->
+    <string name="ID_Confirmation_Notice">Bạn sẽ được yêu cầu phải cung cấp bằng chứng về danh tính của mình, nhằm giúp tôi có thể đảm bảo rằng Godchat sẽ trở thành nơi an toàn cho toàn thể cộng đồng chúng ta</string>
+    <string name="confirm">Xác thực</string>
 
 </resources>

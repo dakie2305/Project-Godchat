@@ -84,4 +84,7 @@
     <string name="Current_password">Current Password</string>
     <string name="New_password">New Password</string>
     <string name="Retype_New_password">Retype New Password</string>
+    <!--Identity Confirmation Setting Activity-->
+    <string name="ID_Confirmation_Notice">You might be asked to provided proof of your identity. This is to help us ensure that Godchat is a safe place for outr whole community</string>
+    <string name="confirm">Confirm</string>
 </resources>
