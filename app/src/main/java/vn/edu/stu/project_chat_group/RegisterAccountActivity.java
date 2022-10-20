@@ -4,18 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -73,21 +68,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
                             loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
                             loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
                             loadingBar.show();
-                            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterAccountActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        Log.d("SignedUpSucessful", "createUserWithEmail:success");
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        openGettingStartedActivity();
-                                    } else {
-                                        Log.w("SignedUpFailed", "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(RegisterAccountActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }
-                            });
-                            //openGettingStartedActivity();
+                            openGettingStartedActivity();
                         }
                     }
 

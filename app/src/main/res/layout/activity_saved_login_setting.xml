@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SavedLoginSettingActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_width="56dp"
+                android:layout_height="41dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/cardview_dark_background"
+                app:icon="@drawable/left_arrow"
+                app:iconSize="14dp"
+                app:iconTint="@color/cardview_dark_background"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/Saved_Login"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radGroupSavedLogin">
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/on"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:textSize="16dp"
+            android:textColor="@color/cardview_dark_background"
+            android:id="@+id/radSavedLoginOn"
+            android:background="?android:attr/selectableItemBackground"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/off"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:textSize="16dp"
+            android:textColor="@color/cardview_dark_background"
+            android:id="@+id/radSavedLoginOff"
+            android:background="?android:attr/selectableItemBackground"/>
+        </RadioGroup>
+</LinearLayout>

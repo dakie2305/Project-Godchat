@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".NotificationActivity">
 
 
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/notification_preview_sub"
-                android:layout_marginTop="-6pt"
+                android:layout_marginTop="-9pt"
                 android:layout_marginLeft="16dp"/>
         </LinearLayout>
         <LinearLayout
@@ -144,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/new_friend_noti_sub"
-                android:layout_marginTop="-6pt"
+                android:layout_marginTop="-9pt"
                 android:layout_marginLeft="16dp"/>
         </LinearLayout>
         <View

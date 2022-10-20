@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -52,12 +53,13 @@ public class LoginPageActivity extends AppCompatActivity {
 
         addControls();
         addEvents();
-
+        checkIfDarkModeOrNot();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
 
     }
 
@@ -114,8 +116,6 @@ public class LoginPageActivity extends AppCompatActivity {
                 }
             }
         });
-
-        //Dùng để lưu theme dark mode
 
 
         //Đăng nhập ẩn danh
@@ -182,6 +182,19 @@ public class LoginPageActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void checkIfDarkModeOrNot() {
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                switchMaterial.setChecked(true);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                switchMaterial.setChecked(false);
+                break;
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                break;
+        }
     }
 
     @Override

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Project_Chat_Group"
         tools:targetApi="31">
         <activity
+            android:name=".SavedLoginSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChangePasswordSettingActivity"
             android:exported="false" />
         <activity
