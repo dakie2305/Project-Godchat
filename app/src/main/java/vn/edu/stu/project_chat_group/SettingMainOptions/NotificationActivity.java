@@ -1,18 +1,18 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.media.MediaPlayer;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class NotificationActivity extends AppCompatActivity {
     MaterialButton btnRingtone, btnCustomiseNoti, btnBack;

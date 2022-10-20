@@ -1,4 +1,4 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class RingtoneSelectActivity extends AppCompatActivity {
     MaterialButton btnBack;

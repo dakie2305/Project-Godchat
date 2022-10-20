@@ -1,23 +1,20 @@
-package vn.edu.stu.project_chat_group;
-
-import androidx.appcompat.app.AppCompatActivity;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class FullNameSettingActivity extends AppCompatActivity {
     MaterialButton btnCommit, btnCancel, btnBack;

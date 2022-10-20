@@ -1,11 +1,10 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -13,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class DarkModeSettingActivity extends AppCompatActivity {
     MaterialButton btnBack;

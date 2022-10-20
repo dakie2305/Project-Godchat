@@ -34,6 +34,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import vn.edu.stu.project_chat_group.SettingMainOptions.RegisterAccountActivity;
+
 public class LoginPageActivity extends AppCompatActivity {
 
     private Button btnAnonLogin, btnLogin, btnGoogleLogin;

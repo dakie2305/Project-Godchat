@@ -1,4 +1,4 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class SettingActivity extends AppCompatActivity {
 

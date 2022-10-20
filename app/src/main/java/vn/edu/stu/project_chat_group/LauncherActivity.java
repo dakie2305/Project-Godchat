@@ -7,6 +7,8 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import vn.edu.stu.project_chat_group.SettingMainOptions.SettingActivity;
+
 public class LauncherActivity extends AppCompatActivity {
 
     ProgressBar progressBar;

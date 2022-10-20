@@ -1,4 +1,4 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class PersonalInformationSettingActivity extends AppCompatActivity {
     MaterialButton btnChangeName, btnBack, btnIDConfirm;

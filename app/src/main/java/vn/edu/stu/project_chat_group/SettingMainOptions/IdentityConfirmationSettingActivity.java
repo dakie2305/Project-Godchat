@@ -1,4 +1,4 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+
+import vn.edu.stu.project_chat_group.R;
 
 public class IdentityConfirmationSettingActivity extends AppCompatActivity {
     MaterialButton btnConfirmId, btnBack;

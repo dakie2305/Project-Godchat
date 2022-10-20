@@ -1,4 +1,4 @@
-package vn.edu.stu.project_chat_group;
+package vn.edu.stu.project_chat_group.SettingMainOptions;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import vn.edu.stu.project_chat_group.GettingStartedAlternativeActivity;
+import vn.edu.stu.project_chat_group.R;
 
 public class RegisterAccountActivity extends AppCompatActivity {
     private Button btnRegister;

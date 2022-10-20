@@ -17,46 +17,46 @@
         android:theme="@style/Theme.Project_Chat_Group"
         tools:targetApi="31">
         <activity
-            android:name=".IdentityConfirmationSettingActivity"
+            android:name=".SettingMainOptions.IdentityConfirmationSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".SavedLoginSettingActivity"
+            android:name=".SettingMainOptions.SavedLoginSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordSettingActivity"
+            android:name=".SettingMainOptions.ChangePasswordSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".PasswordAndSecuritySettingActivity"
+            android:name=".SettingMainOptions.PasswordAndSecuritySettingActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileIDActivity"
             android:exported="false" />
         <activity
-            android:name=".FullNameSettingActivity"
+            android:name=".SettingMainOptions.FullNameSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".PersonalInformationSettingActivity"
+            android:name=".SettingMainOptions.PersonalInformationSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".RingtoneSelectActivity"
+            android:name=".SettingMainOptions.RingtoneSelectActivity"
             android:exported="false" />
         <activity
-            android:name=".NotificationActivity"
+            android:name=".SettingMainOptions.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".LanguageChangeActivity"
+            android:name=".SettingMainOptions.LanguageChangeActivity"
             android:exported="false" />
         <activity
-            android:name=".DarkModeSettingActivity"
+            android:name=".SettingMainOptions.DarkModeSettingActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".SettingMainOptions.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".LoginPageActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterAccountActivity"
+            android:name=".SettingMainOptions.RegisterAccountActivity"
             android:exported="false" />
         <activity
             android:name=".GettingStartedAlternative3Activity"
