@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
     tools:context=".SettingMainOptions.SettingActivity">
 
     <ScrollView
@@ -67,6 +68,66 @@
                 android:textColor="@color/cardview_dark_background"
                 android:id="@+id/btnPasswordManage"
                 app:icon="@drawable/password"
+                app:iconSize="18dp"
+                app:iconTint="@color/cardview_dark_background"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Preferences_Setting"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:id="@+id/tvTitle3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Customize_your_own"
+                android:textSize="16dp"
+                android:id="@+id/tvSubtitle3"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Dark_mode"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="11dp"
+                android:textColor="@color/cardview_dark_background"
+                android:id="@+id/btnDarkModeToggle"
+                app:icon="@drawable/darkmode_icon"
+                app:iconSize="18dp"
+                app:iconTint="@color/cardview_dark_background"
+                android:background="?android:attr/selectableItemBackground"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Shortcut"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="11dp"
+                android:textColor="@color/cardview_dark_background"
+                android:id="@+id/btnShortCut"
+                app:icon="@drawable/shortcut_icon"
+                app:iconSize="18dp"
+                app:iconTint="@color/cardview_dark_background"
+                android:background="?android:attr/selectableItemBackground"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Language"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="11dp"
+                android:textColor="@color/cardview_dark_background"
+                android:id="@+id/btnLanguage"
+                app:icon="@drawable/language_icon"
                 app:iconSize="18dp"
                 app:iconTint="@color/cardview_dark_background"
                 android:background="?android:attr/selectableItemBackground"/>
@@ -181,65 +242,6 @@
                 android:textColor="@color/cardview_dark_background"
                 android:id="@+id/btnMedia"
                 app:icon="@drawable/media_icon"
-                app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
-                android:background="?android:attr/selectableItemBackground"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@android:color/darker_gray"
-                android:layout_marginTop="2dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Preferences_Setting"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:id="@+id/tvTitle3"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Customize_your_own"
-                android:textSize="16dp"
-                android:id="@+id/tvSubtitle3"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Dark_mode"
-                android:textStyle="bold"
-                android:textAlignment="textStart"
-                android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
-                android:id="@+id/btnDarkModeToggle"
-                app:icon="@drawable/darkmode_icon"
-                app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
-                android:background="?android:attr/selectableItemBackground"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Shortcut"
-                android:textStyle="bold"
-                android:textAlignment="textStart"
-                android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
-                android:id="@+id/btnShortCut"
-                app:icon="@drawable/shortcut_icon"
-                app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
-                android:background="?android:attr/selectableItemBackground"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Language"
-                android:textStyle="bold"
-                android:textAlignment="textStart"
-                android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
-                android:id="@+id/btnLanguage"
-                app:icon="@drawable/language_icon"
                 app:iconSize="18dp"
                 app:iconTint="@color/cardview_dark_background"
                 android:background="?android:attr/selectableItemBackground"/>

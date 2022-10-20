@@ -1,13 +1,14 @@
 package vn.edu.stu.project_chat_group.SettingMainOptions;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.media.MediaPlayer;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -75,6 +76,18 @@ public class NotificationActivity extends AppCompatActivity {
             }
         });
         changeRingToneName();
+        swVibration.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(swVibration.isChecked())
+                    vibrate();
+            }
+        });
+    }
+
+    private void vibrate() {
+        Vibrator vibe = (Vibrator) getSystemService(NotificationActivity.VIBRATOR_SERVICE);
+        vibe.vibrate(100);
     }
 
     private void changeRingToneName() {

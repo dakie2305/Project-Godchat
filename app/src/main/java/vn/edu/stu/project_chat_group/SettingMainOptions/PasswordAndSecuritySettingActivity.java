@@ -44,6 +44,8 @@ public class PasswordAndSecuritySettingActivity extends AppCompatActivity {
     }
 
     private void openSaveLoginSetting() {
+        Intent intent = new Intent(PasswordAndSecuritySettingActivity.this, SavedLoginSettingActivity.class);
+        startActivity(intent);
     }
 
     private void openPasswordChangeSetting() {
