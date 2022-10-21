@@ -47,7 +47,7 @@
     <string name="Dark_mode">Chế độ tối</string>
     <string name="Shortcut">Lối tắt</string>
     <string name="Language">Ngôn ngữ</string>
-
+    <string name="Update_App">Cập nhật</string>
     <!--Language Activity-->
     <string name="vietnamese_lang">Tiếng Việt</string>
     <string name="english_lang">Tiếng Anh</string>
@@ -88,5 +88,10 @@
     <!--Identity Confirmation Setting Activity-->
     <string name="ID_Confirmation_Notice">Bạn sẽ được yêu cầu phải cung cấp bằng chứng về danh tính của mình, nhằm giúp tôi có thể đảm bảo rằng Godchat sẽ trở thành nơi an toàn cho toàn thể cộng đồng chúng ta</string>
     <string name="confirm">Xác thực</string>
+    <!--Update App Setting Activity-->
+    <string name="auto_update">Tự động cập nhật</string>
+    <string name="auto_update_sub">Tự động cập nhật qua Wifi</string>
+    <string name="update_available">Thông báo cập nhật</string>
+    <string name="update_available_sub">Thông báo khi có cập nhật mới</string>
 
 </resources>

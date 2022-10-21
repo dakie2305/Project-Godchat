@@ -12,7 +12,7 @@ import vn.edu.stu.project_chat_group.R;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange, btnPasswordManage;
+    private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange, btnPasswordManage, btnAppUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,8 @@ public class SettingActivity extends AppCompatActivity {
         btnNoti = findViewById(R.id.btnNotification); //setting chỉnh thông báo
         btnPersonalAccountMange = findViewById(R.id.btnPersonalAccountMange); //setting chỉnh thông tin tài khoản
         btnPasswordManage = findViewById(R.id.btnPasswordManage); //setting chỉnh sửa mật khẩu và bảo mậts
+        btnAppUpdate = findViewById(R.id.btnUpdateApp); //setting auto update
+
     }
     private void addEvents() {
         btnDarkMode.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +64,17 @@ public class SettingActivity extends AppCompatActivity {
                 openPasswordChangeActivity();
             }
         });
+        btnAppUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openAutoUpdateAppSetting();
+            }
+        });
+    }
+
+    private void openAutoUpdateAppSetting() {
+        Intent intent = new Intent(SettingActivity.this, AppUpdateSettingActivity.class);
+        startActivity(intent);
     }
 
     private void openPasswordChangeActivity() {

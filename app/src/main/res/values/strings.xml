@@ -47,6 +47,7 @@
     <string name="Dark_mode">Dark Mode</string>
     <string name="Shortcut">Shortcut</string>
     <string name="Language">Language</string>
+    <string name="Update_App">App Update</string>
     <!--Language Activity-->
     <string name="vietnamese_lang">Vietnamese</string>
     <string name="english_lang">English</string>
@@ -87,4 +88,9 @@
     <!--Identity Confirmation Setting Activity-->
     <string name="ID_Confirmation_Notice">You might be asked to provided proof of your identity. This is to help us ensure that Godchat is a safe place for outr whole community</string>
     <string name="confirm">Confirm</string>
+    <!--Update App Setting Activity-->
+    <string name="auto_update">Auto-update Godchat</string>
+    <string name="auto_update_sub">Automatically update app over Wifi</string>
+    <string name="update_available">Update Notification</string>
+    <string name="update_available_sub">Get notified when updates are available</string>
 </resources>
