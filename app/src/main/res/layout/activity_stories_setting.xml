@@ -1,9 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingMainOptions.StoriesSettingActivity">
+    tools:context=".SettingMainOptions.StoriesSettingActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="56dp"
+            android:layout_height="41dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
+            app:icon="@drawable/left_arrow"
+            app:iconSize="14dp"
+            app:iconTint="@color/cardview_dark_background"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/Stories"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/who_can_see_your_stories"
+            android:textSize="20dp"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/who_can_see_your_stories_sub"
+            android:textSize="16dp"
+            android:textColor="@color/material_on_background_emphasis_medium"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/radioGroupStories">
+
+        <RadioButton
+            android:id="@+id/radPublic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/Public"
+            android:textAlignment="textStart"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Public_sub"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-16dp"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/Friends_Only"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:textSize="16dp"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
+            android:id="@+id/radFriendsOnly"
+            android:background="?android:attr/selectableItemBackground"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Friends_Only_sub"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-16dp"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Only_Me"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="textStart"
+            android:textSize="16dp"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
+            android:id="@+id/radOnlyMe"
+            android:background="?android:attr/selectableItemBackground"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Only_Me_sub"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-16dp"/>
+    </RadioGroup>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Archive_Stories"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textSize="13dp"
+        android:layout_marginLeft="14dp"
+        android:textColor="@color/material_on_primary_emphasis_high_type"
+        android:id="@+id/swArchiveStories"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Archive_Stories_sub"
+        android:layout_marginLeft="15dp"
+        />
+
+</LinearLayout>

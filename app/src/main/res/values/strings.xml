@@ -93,4 +93,17 @@
     <string name="auto_update_sub">Automatically update app over Wifi</string>
     <string name="update_available">Update Notification</string>
     <string name="update_available_sub">Get notified when updates are available</string>
+    <!--Stories Setting Activity-->
+    <string name="who_can_see_your_stories">Who can see your story?</string>
+    <string name="who_can_see_your_stories_sub">Your story will be visible for 24 hours</string>
+    <string name="Public">Public</string>
+    <string name="Public_sub">Anyone can see it</string>
+    <string name="Friends_Only">Friends Only</string>
+    <string name="Friends_Only_sub">Only your friends can see it</string>
+    <string name="Only_Me">Only Me</string>
+    <string name="Only_Me_sub">Only you can see it</string>
+    <string name="Archive_Stories">Archive Stories</string>
+    <string name="Archive_Stories_sub">When turned on, any stories that you post will be saved to a private archive that is only visible to you</string>
+
+
 </resources>

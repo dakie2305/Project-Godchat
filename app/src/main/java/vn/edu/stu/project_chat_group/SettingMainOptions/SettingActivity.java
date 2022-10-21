@@ -13,7 +13,7 @@ import vn.edu.stu.project_chat_group.R;
 public class SettingActivity extends AppCompatActivity {
 
     private MaterialButton btnDarkMode, btnLanguageChange, btnNoti, btnPersonalAccountMange, btnPasswordManage, btnAppUpdate;
-
+    private MaterialButton btnStories;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class SettingActivity extends AppCompatActivity {
         btnPersonalAccountMange = findViewById(R.id.btnPersonalAccountMange); //setting chỉnh thông tin tài khoản
         btnPasswordManage = findViewById(R.id.btnPasswordManage); //setting chỉnh sửa mật khẩu và bảo mậts
         btnAppUpdate = findViewById(R.id.btnUpdateApp); //setting auto update
+        btnStories = findViewById(R.id.btnStories); //setting chỉnh stories
 
     }
     private void addEvents() {
@@ -70,6 +71,17 @@ public class SettingActivity extends AppCompatActivity {
                 openAutoUpdateAppSetting();
             }
         });
+        btnStories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openStoriesSetting();
+            }
+        });
+    }
+
+    private void openStoriesSetting() {
+        Intent intent = new Intent(SettingActivity.this, StoriesSettingActivity.class);
+        startActivity(intent);
     }
 
     private void openAutoUpdateAppSetting() {
