@@ -28,10 +28,10 @@
                 android:layout_width="56dp"
                 android:layout_height="41dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 app:icon="@drawable/left_arrow"
                 app:iconSize="14dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -69,7 +69,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad1"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -79,7 +79,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad2"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -89,7 +89,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad3"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -99,7 +99,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad4"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -109,7 +109,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad5"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -119,7 +119,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad6"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -129,7 +129,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad7"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -139,7 +139,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad8"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -149,7 +149,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad9"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -159,7 +159,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad10"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -169,7 +169,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad11"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -179,7 +179,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad12"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -189,7 +189,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad13"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -199,7 +199,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad14"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -209,7 +209,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad15"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -219,7 +219,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad16"
                     android:background="?android:attr/selectableItemBackground"/>
                 <RadioButton
@@ -229,7 +229,7 @@
                     android:textStyle="bold"
                     android:textAlignment="textStart"
                     android:textSize="16dp"
-                    android:textColor="@color/cardview_dark_background"
+                    android:textColor="@color/material_on_primary_emphasis_high_type"
                     android:id="@+id/rad17"
                     android:background="?android:attr/selectableItemBackground"/>
             </RadioGroup>

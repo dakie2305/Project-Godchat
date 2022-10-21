@@ -39,11 +39,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnNotification"
                 app:icon="@drawable/ownership"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -52,11 +52,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnPersonalAccountMange"
                 app:icon="@drawable/personal_information_setting"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -65,11 +65,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnPasswordManage"
                 app:icon="@drawable/password"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
 
             <View
@@ -99,11 +99,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnDarkModeToggle"
                 app:icon="@drawable/darkmode_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -112,11 +112,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnShortCut"
                 app:icon="@drawable/shortcut_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -125,11 +125,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnLanguage"
                 app:icon="@drawable/language_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <View
                 android:layout_width="match_parent"
@@ -159,11 +159,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnStories"
                 app:icon="@drawable/story"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -172,11 +172,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnProfileInfo"
                 app:icon="@drawable/personal_information_setting"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -185,11 +185,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnProfileTag"
                 app:icon="@drawable/tags"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -198,11 +198,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnVideo"
                 app:icon="@drawable/video_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -211,11 +211,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnPictures"
                 app:icon="@drawable/pictures_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
 
             <com.google.android.material.button.MaterialButton
@@ -225,12 +225,12 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:text="@string/Contents"
                 android:textAlignment="textStart"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:textSize="11dp"
                 android:textStyle="bold"
                 app:icon="@drawable/content_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background" />
+                app:iconTint="@color/material_on_primary_emphasis_high_type" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
@@ -239,11 +239,11 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="11dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnMedia"
                 app:icon="@drawable/media_icon"
                 app:iconSize="18dp"
-                app:iconTint="@color/cardview_dark_background"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"
                 android:background="?android:attr/selectableItemBackground"/>
 
         </LinearLayout>

@@ -26,10 +26,10 @@
             android:layout_width="56dp"
             android:layout_height="41dp"
             android:background="?android:attr/selectableItemBackground"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
             app:icon="@drawable/left_arrow"
             app:iconSize="14dp"
-            app:iconTint="@color/cardview_dark_background"
+            app:iconTint="@color/material_on_primary_emphasis_high_type"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -78,7 +78,7 @@
                 android:textStyle="bold"
                 android:textAlignment="textStart"
                 android:textSize="12dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/btnRingtone"
                 android:background="?android:attr/selectableItemBackground"/>
             <TextView
@@ -113,7 +113,7 @@
                 android:textAllCaps="true"
                 android:textSize="13dp"
                 android:layout_marginLeft="14dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/swPreviewNoti"
                 android:background="?android:attr/selectableItemBackground"/>
             <TextView
@@ -138,7 +138,7 @@
                 android:textAllCaps="true"
                 android:textSize="13dp"
                 android:layout_marginLeft="14dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/swNewFriendNoti"
                 android:background="?android:attr/selectableItemBackground"/>
             <TextView
@@ -168,7 +168,7 @@
                 android:textAllCaps="true"
                 android:textSize="13dp"
                 android:layout_marginLeft="14dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/swVibrate"
                 android:background="?android:attr/selectableItemBackground"/>
             <TextView
@@ -193,7 +193,7 @@
                 android:textAllCaps="true"
                 android:textSize="13dp"
                 android:layout_marginLeft="14dp"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
                 android:id="@+id/swSounds"
                 android:background="?android:attr/selectableItemBackground"/>
             <TextView

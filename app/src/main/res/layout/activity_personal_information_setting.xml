@@ -16,10 +16,10 @@
             android:layout_width="56dp"
             android:layout_height="41dp"
             android:background="?android:attr/selectableItemBackground"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
             app:icon="@drawable/left_arrow"
             app:iconSize="14dp"
-            app:iconTint="@color/cardview_dark_background"
+            app:iconTint="@color/material_on_primary_emphasis_high_type"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -55,11 +55,11 @@
             android:textStyle="bold"
             android:textAlignment="textStart"
             android:textSize="12dp"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
             android:id="@+id/btnFullNameChange"
             app:icon="@drawable/personal_information_setting"
             app:iconSize="18dp"
-            app:iconTint="@color/cardview_dark_background"
+            app:iconTint="@color/material_on_primary_emphasis_high_type"
             android:background="?android:attr/selectableItemBackground"/>
         <TextView
             android:layout_width="match_parent"
@@ -90,11 +90,11 @@
 <!--            android:textStyle="bold"-->
 <!--            android:textAlignment="textStart"-->
 <!--            android:textSize="12dp"-->
-<!--            android:textColor="@color/cardview_dark_background"-->
+<!--            android:textColor="@color/material_on_primary_emphasis_high_type"-->
 <!--            android:id="@+id/btnContactInfo"-->
 <!--            app:icon="@drawable/content_icon"-->
 <!--            app:iconSize="18dp"-->
-<!--            app:iconTint="@color/cardview_dark_background"-->
+<!--            app:iconTint="@color/material_on_primary_emphasis_high_type"-->
 <!--            android:background="?android:attr/selectableItemBackground"/>-->
 <!--        <TextView-->
 <!--            android:layout_width="match_parent"-->
@@ -125,12 +125,12 @@
             android:background="?android:attr/selectableItemBackground"
             android:text="@string/Identity_Confirmation"
             android:textAlignment="textStart"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/material_on_primary_emphasis_high_type"
             android:textSize="12dp"
             android:textStyle="bold"
             app:icon="@drawable/id_confirm"
             app:iconSize="18dp"
-            app:iconTint="@color/cardview_dark_background" />
+            app:iconTint="@color/material_on_primary_emphasis_high_type" />
 
         <TextView
             android:layout_width="match_parent"
