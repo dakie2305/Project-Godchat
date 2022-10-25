@@ -15,11 +15,32 @@
         android:id="@+id/linearLayloutNavBar"
         android:weightSum="1"
         android:orientation="horizontal">
-        
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width=""
-            android:layout_height=""
 
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundedImageProfileMain"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/background_image"
+            android:scaleType="centerCrop"
+
+            app:riv_oval="true"/>
+        <TextView
+            android:layout_width="0pt"
+            android:layout_height="match_parent"
+            android:id="@+id/tvDisplayName"
+            android:text="Nguyễn Đức Văn Thanh"
+            android:gravity="center"
+            android:textSize="17dp"
+            android:layout_weight="0.9"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="10dp"
+            android:id="@+id/acpMenu"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/menu_icon"
+            android:layout_weight="0.1"/>
 
     </LinearLayout>
 

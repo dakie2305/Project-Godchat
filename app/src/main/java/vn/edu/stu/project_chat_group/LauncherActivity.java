@@ -24,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(LauncherActivity.this, LoginPageActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
                 finish();
             }
         },1000);
