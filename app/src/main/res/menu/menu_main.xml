@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/search_icon"
+        android:title="Search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView" />
+
+    <item android:title="Setting"
+        android:id="@+id/mnuSetting"
+        android:icon="@drawable/setting_icon"/>
+
+    <item android:title="About US"
+        android:id="@+id/mnuAbout"
+        android:icon="@drawable/about_icon"/>
+
+    <item android:title="Exit"
+        android:id="@+id/mnuExit"
+        android:icon="@drawable/exit_icon"
+        />
+
+</menu>

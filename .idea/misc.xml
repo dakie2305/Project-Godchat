@@ -33,6 +33,7 @@
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_ringtone_select.xml" value="0.264" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/activity_setting.xml" value="0.4" />
         <entry key="..\:/Github/Project-Godchat/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/drawable/background_image.xml" value="0.1" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/drawable/border.xml" value="0.2495" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_app_update_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_change_password_setting.xml" value="0.25416666666666665" />
@@ -45,6 +46,7 @@
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_language_change.xml" value="0.264" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_launcher.xml" value="0.144" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_login_page.xml" value="0.264" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_notification.xml" value="0.25416666666666665" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_password_and_security_setting.xml" value="0.25416666666666665" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_personal_information_setting.xml" value="0.25416666666666665" />
@@ -54,6 +56,8 @@
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_saved_login_setting.xml" value="0.264" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_setting.xml" value="0.264" />
         <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/layout/activity_stories_setting.xml" value="0.264" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/menu/menu_context.xml" value="0.253125" />
+        <entry key="..\:/GithubProject/Project-Godchat/app/src/main/res/menu/menu_main.xml" value="0.253125" />
       </map>
     </option>
   </component>

@@ -12,29 +12,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.switchmaterial.SwitchMaterial;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 import vn.edu.stu.project_chat_group.SettingMainOptions.RegisterAccountActivity;
+import vn.edu.stu.project_chat_group.utilities.Constant;
+import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
 public class LoginPageActivity extends AppCompatActivity {
 
@@ -43,6 +38,9 @@ public class LoginPageActivity extends AppCompatActivity {
     private SwitchMaterial switchMaterial;
     private EditText etUsername, etPassword;
     private ProgressDialog loadingBar;
+    private ProgressBar progessBarLogin;
+
+    private PreferencesManager preferencesManager;
 
     GoogleSignInClient googleSignInClient;
     FirebaseAuth firebaseAuth;
@@ -56,13 +54,25 @@ public class LoginPageActivity extends AppCompatActivity {
         addControls();
         addEvents();
         checkIfDarkModeOrNot();
+        preferencesManager = new PreferencesManager(LoginPageActivity.this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+    }
 
+    private void addDataToFirestore(){ //quan trọng, dùng để test thêm dữ liệu vào Firestore
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("first_name", "Chriga");  //test thêm first name: Chriga và last name
+        data.put("last_name", "God");
+        database.collection("users").add(data) //tạo một collection tên users để chứa first name và last name
+                .addOnSuccessListener(documentReference -> {Toast.makeText(this, "Data inserted", Toast.LENGTH_SHORT).show();}) //nếu thành công thì xuất Toast
+                .addOnFailureListener(exception -> {
+                    Toast.makeText(this, "Data failed: " + exception.getMessage(), Toast.LENGTH_SHORT);
+                });
     }
 
     private void addControls() {
@@ -70,34 +80,15 @@ public class LoginPageActivity extends AppCompatActivity {
         btnAnonLogin = (Button) findViewById(R.id.btnAnonymousLogin); //nút đăng nhập ẩn danh
         btnLogin= findViewById(R.id.btnLogin); //nút đăng nhập bình thường
         switchMaterial = findViewById(R.id.switchDarkMode);//Nút switch dark mode
-        btnGoogleLogin = findViewById(R.id.btnGoogleLogin);
+        btnGoogleLogin = findViewById(R.id.btnGoogleLogin); //nút đăng nhập google
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
+        progessBarLogin = findViewById(R.id.progessBarLogin);
 
         loadingBar = new ProgressDialog(LoginPageActivity.this);
     }
 
     private void addEvents() {
-        GoogleSignInOptions googleSignInOptions=new GoogleSignInOptions.Builder(
-                GoogleSignInOptions.DEFAULT_SIGN_IN
-        ).requestIdToken("648782678538-qmdqfq0gtqsk0kl0dlfsc0565tomg47c.apps.googleusercontent.com") //copy từ client id trong google services
-                .requestEmail()
-                .build();
-        // Bắt đầu đăng nhập
-        googleSignInClient= GoogleSignIn.getClient(LoginPageActivity.this
-                ,googleSignInOptions);
-        // Initialize firebase auth
-        firebaseAuth=FirebaseAuth.getInstance();
-        // Initialize firebase user
-        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-        // Check condition
-        if(firebaseUser!=null)
-        {
-            // When user already sign in
-            // redirect to profile activity
-            startActivity(new Intent(LoginPageActivity.this,ProfileIDActivity.class)
-                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-        }
 
         //Đăng ký
         textViewRegister.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +109,6 @@ public class LoginPageActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         //Đăng nhập ẩn danh
         btnAnonLogin.setOnClickListener(new View.OnClickListener() {
@@ -159,30 +149,18 @@ public class LoginPageActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = etUsername.getText().toString();
-                String password = etPassword.getText().toString();
-
-                if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+                if (!isValidSignInDetai()) { //kiểm tra xem có nhập username với pass chưa
                     Toast.makeText(LoginPageActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
                 } // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
                 else{
-                    loadingBar.setTitle(R.string.creating_account);
-                    loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
-                    loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
-                    loadingBar.show();
-                    openGettingStartedActivity(); //mở giao diện Mở Đầu
+
+                    signIn();
+                    //addDataToFirestore();
+                    //openGettingStartedActivity(); //mở giao diện Mở Đầu
                 }
             }
         });
 
-        btnGoogleLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= googleSignInClient.getSignInIntent();
-                // Start activity for result
-                startActivityForResult(intent,100);
-            }
-        });
 
     }
     private void checkIfDarkModeOrNot() {
@@ -199,76 +177,6 @@ public class LoginPageActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==100)
-        {
-            // When request code is equal to 100
-            // Initialize task
-            Task<GoogleSignInAccount> signInAccountTask=GoogleSignIn
-                    .getSignedInAccountFromIntent(data);
-
-            // check condition
-            if(signInAccountTask.isSuccessful())
-            {
-                // When google sign in successful
-                // Initialize string
-                String s="Google sign in successful";
-                // Display Toast
-                displayToast(s);
-                // Initialize sign in account
-                try {
-                    // Initialize sign in account
-                    GoogleSignInAccount googleSignInAccount=signInAccountTask
-                            .getResult(ApiException.class);
-                    // Check condition
-                    if(googleSignInAccount!=null)
-                    {
-                        // When sign in account is not equal to null
-                        // Initialize auth credential
-                        AuthCredential authCredential= GoogleAuthProvider
-                                .getCredential(googleSignInAccount.getIdToken()
-                                        ,null);
-                        // Check credential
-                        firebaseAuth.signInWithCredential(authCredential)
-                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        // Check condition
-                                        if(task.isSuccessful())
-                                        {
-                                            // When task is successful
-                                            // Redirect to profile activity
-                                            startActivity(new Intent(LoginPageActivity.this
-                                                    ,ProfileIDActivity.class)
-                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                                            // Display Toast
-                                            displayToast("Firebase authentication successful");
-                                        }
-                                        else
-                                        {
-                                            // When task is unsuccessful
-                                            // Display Toast
-                                            displayToast("Authentication Failed :"+task.getException()
-                                                    .getMessage());
-                                        }
-                                    }
-                                });
-
-                    }
-                }
-                catch (ApiException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    private void displayToast(String s) {
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
-    }
 
     private void openRegisterActivity() {
         Intent intent = new Intent(LoginPageActivity.this, RegisterAccountActivity.class);
@@ -279,5 +187,57 @@ public class LoginPageActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginPageActivity.this,GettingStartedAlternativeActivity.class);
         startActivity(intent);
     }
+    public void showToast(String str){
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+    }
 
+
+    private Boolean isValidSignInDetai(){                   //kiểm tra đăng ký đã đúng chưa
+        String username = etUsername.getText().toString();
+        String password = etPassword.getText().toString();
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
+            Toast.makeText(LoginPageActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
+            return false;
+        } // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
+
+        return true;
+    }
+
+    private void signIn(){
+        loading(true);
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        database.collection(Constant.KEY_COLLECTION_USERS)
+                .whereEqualTo(Constant.KEY_USERNAME, etUsername.getText().toString())
+                .whereEqualTo(Constant.KEY_PASSWORD, etPassword.getText().toString())
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult()!=null && task.getResult().getDocuments().size() > 0){
+                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+                        preferencesManager.putBoolean(Constant.KEY_IS_SIGNED_IN,true);
+                        preferencesManager.putString(Constant.KEY_USER_ID,documentSnapshot.getId());
+                        preferencesManager.putString(Constant.KEY_NAME, documentSnapshot.getString(Constant.KEY_NAME));
+                        preferencesManager.putString(Constant.KEY_IMAGE, documentSnapshot.getString(Constant.KEY_IMAGE));
+                        loadingBar.setTitle(R.string.Signing_in);
+                        loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
+                        loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
+                        loadingBar.show();
+                        Intent intent = new Intent(LoginPageActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    }else
+                    {
+                        loading(false);
+                        Toast.makeText(this, R.string.Unable_to_sign_in, Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+    private void loading(Boolean isLoading) {                //Khi đã hoàn thiện và bấm vào thì nút sẽ tự ẩn đi, thanh progressBar tự hiện ra
+        if (isLoading) {
+            btnLogin.setVisibility(View.INVISIBLE);
+            progessBarLogin.setVisibility(View.VISIBLE);
+        } else {
+            btnLogin.setVisibility(View.VISIBLE);
+            progessBarLogin.setVisibility(View.INVISIBLE);
+        }
+    }
 }

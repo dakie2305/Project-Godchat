@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Delete Chat" android:id="@+id/mnuDeleteChat" />
+    <item android:title="Mute Chat" android:id="@+id/mnuMuteChat" />
+
+</menu>

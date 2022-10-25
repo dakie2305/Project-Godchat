@@ -7,8 +7,6 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import vn.edu.stu.project_chat_group.SettingMainOptions.SettingActivity;
-
 public class LauncherActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
@@ -24,7 +22,7 @@ public class LauncherActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(LauncherActivity.this, SettingActivity.class);
+                Intent intent = new Intent(LauncherActivity.this, LoginPageActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 finish();

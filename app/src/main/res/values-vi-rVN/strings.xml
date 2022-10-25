@@ -7,6 +7,7 @@
     <string name="LoginAnounymous_Btn">Đăng Nhập Ẩn Danh</string>
     <string name="empty_username_pass">Xin hãy nhập username và password</string>
     <string name="register_text"><u>Không có tài khoản?</u></string>
+    <string name="Signing_in">Đang đăng nhập...</string>
     <!--Register Activity-->
     <string name="InputFirstName">Nhập Tên</string>
     <string name="InputLastName">Nhập Họ</string>
@@ -16,6 +17,7 @@
     <string name="InputEmail">Nhập Email</string>
     <string name="RepeatEmail">Nhập Lại Email</string>
     <string name="invalid_email">Email không hợp lệ</string>
+    <string name="add_image">Thêm hình ảnh</string>
     <!--Getting Started Alternative 1,2,3 Activity-->
     <string name="welcome_msg1">Lấy cảm hứng từ các phần mềm giao tiếp, kết nối mạng xã hội như Zalo, Messenger. Godchat ra đời vì mục đích kết nối con người với nhau.</string>
     <string name="welcome_msg2">Với tính năng chat ẩn danh nổi trội và hỗ trợ Dark Mode, Godchat là lựa chọn hàng đầu của cộng đồng mạng Việt Nam</string>
@@ -93,5 +95,17 @@
     <string name="auto_update_sub">Tự động cập nhật qua Wifi</string>
     <string name="update_available">Thông báo cập nhật</string>
     <string name="update_available_sub">Thông báo khi có cập nhật mới</string>
+    <!--Stories Setting Activity-->
+    <string name="who_can_see_your_stories">Ai có thể thấy story của bạn?</string>
+    <string name="who_can_see_your_stories_sub">Story của bạn sẽ hiển thị trong 24 giờ đồng hồ</string>
+    <string name="Public">Công khai</string>
+    <string name="Public_sub">Ai cũng thấy</string>
+    <string name="Friends_Only">Chỉ bạn bè</string>
+    <string name="Friends_Only_sub">Chỉ có bạn bè bạn mới thấy</string>
+    <string name="Only_Me">Chỉ mình tôi</string>
+    <string name="Only_Me_sub">Chỉ mình bạn mới thấy</string>
+    <string name="Archive_Stories">Kho lưu trữ</string>
+    <string name="Archive_Stories_sub">Khi bật lên thì tất cả story bạn đăng sẽ được lưu vào kho lưu trữ cá nhân mà chỉ một mình bạn có thể thấy được.</string>
+
 
 </resources>
