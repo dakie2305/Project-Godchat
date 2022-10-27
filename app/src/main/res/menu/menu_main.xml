@@ -16,8 +16,8 @@
         android:id="@+id/mnuAbout"
         android:icon="@drawable/about_icon"/>
 
-    <item android:title="Exit"
-        android:id="@+id/mnuExit"
+    <item android:title="@string/Logout"
+        android:id="@+id/mnuLogout"
         android:icon="@drawable/exit_icon"
         />
 

@@ -64,7 +64,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đức Nguyễn"
+            android:text=""
             android:id="@+id/tvFullNameSetting"
             android:layout_marginTop="-5pt"
             android:layout_marginLeft="18pt"/>

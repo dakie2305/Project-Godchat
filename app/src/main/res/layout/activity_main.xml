@@ -10,6 +10,7 @@
     android:weightSum="1">
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="22pt"
         android:id="@+id/linearLayloutNavBar"
@@ -21,7 +22,7 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:background="@drawable/background_image"
+            android:background="@drawable/background_icon"
             android:scaleType="centerCrop"
 
             app:riv_oval="true"/>
@@ -29,7 +30,7 @@
             android:layout_width="0pt"
             android:layout_height="match_parent"
             android:id="@+id/tvDisplayName"
-            android:text="Nguyễn Đức Văn Thanh"
+            android:text=""
             android:gravity="center"
             android:textSize="17dp"
             android:layout_weight="0.9"/>
@@ -50,6 +51,29 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.92"
         android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_content_bottom">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlus"
+                android:layout_width="58dp"
+                android:layout_height="49dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                app:icon="@drawable/plus_icon"
+                app:iconSize="14dp"
+                app:iconTint="@color/grey"
+                android:layout_gravity="bottom|end"
+                />
+
+        </FrameLayout>
+
+
 
 
     </LinearLayout>

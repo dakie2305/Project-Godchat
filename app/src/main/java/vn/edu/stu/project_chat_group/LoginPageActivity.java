@@ -54,7 +54,7 @@ public class LoginPageActivity extends AppCompatActivity {
         addControls();
         addEvents();
         checkIfDarkModeOrNot();
-        preferencesManager = new PreferencesManager(LoginPageActivity.this);
+        preferencesManager = new PreferencesManager(getApplicationContext());
     }
 
     @Override
@@ -187,12 +187,8 @@ public class LoginPageActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginPageActivity.this,GettingStartedAlternativeActivity.class);
         startActivity(intent);
     }
-    public void showToast(String str){
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
-    }
 
-
-    private Boolean isValidSignInDetai(){                   //kiểm tra đăng ký đã đúng chưa
+    private Boolean isValidSignInDetai(){                   //kiểm tra đăng nhập điền đã đúng chưa
         String username = etUsername.getText().toString();
         String password = etPassword.getText().toString();
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
@@ -221,7 +217,7 @@ public class LoginPageActivity extends AppCompatActivity {
                         loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
                         loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
                         loadingBar.show();
-                        Intent intent = new Intent(LoginPageActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginPageActivity.this, GettingStartedAlternativeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }else

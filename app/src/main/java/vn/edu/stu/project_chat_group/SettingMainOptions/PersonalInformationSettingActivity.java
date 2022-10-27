@@ -11,15 +11,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 
 import vn.edu.stu.project_chat_group.R;
+import vn.edu.stu.project_chat_group.utilities.Constant;
+import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
 public class PersonalInformationSettingActivity extends AppCompatActivity {
+    private PreferencesManager preferencesManager;
+
     MaterialButton btnChangeName, btnBack, btnIDConfirm;
     TextView tvFullName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_information_setting);
-        
+        preferencesManager = new PreferencesManager(PersonalInformationSettingActivity.this);
         addControls();
         addEvents();
     }
@@ -33,6 +37,7 @@ public class PersonalInformationSettingActivity extends AppCompatActivity {
         btnIDConfirm = findViewById(R.id.btnIDConfirm);
     }
     private void addEvents() {
+        tvFullName.setText(preferencesManager.getString(Constant.KEY_NAME));
         btnChangeName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

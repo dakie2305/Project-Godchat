@@ -99,7 +99,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
                     Toast.makeText(RegisterAccountActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
                 }
                 else
-                    register();
+                    register(); //đăng ký
                 }
     });
         frameLayoutImageProfile.setOnClickListener(new View.OnClickListener(){
@@ -185,6 +185,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
         }
     }
 
+    //hàm sẽ mã hoá ảnh dựa trên Bitmap và trả về chuỗi string để có thể đưa lên firebase firestore database
     public String encodedImage(Bitmap bitmap) {
         int previewWidth = 150;
         int previewHeight = bitmap.getHeight() * previewWidth / bitmap.getWidth();
@@ -192,11 +193,11 @@ public class RegisterAccountActivity extends AppCompatActivity {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         previewBitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream);
         byte[] bytes = byteArrayOutputStream.toByteArray();
-        return Base64.encodeToString(bytes, Base64.DEFAULT);
+        return Base64.encodeToString(bytes, Base64.DEFAULT); //trả về chuỗi string đã được mã hoá dựa trên thuật toán Bitmap
     }
 
 
-    //toàn function để có thể chọn ảnh từ thư viện
+    //toàn function để có thể chọn ảnh từ thư viện ảnh trong máy
     private final ActivityResultLauncher<Intent> pickImage = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {

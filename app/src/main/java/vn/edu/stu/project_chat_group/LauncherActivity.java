@@ -7,8 +7,11 @@ import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
+
 public class LauncherActivity extends AppCompatActivity {
 
+    private PreferencesManager preferencesManager;
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +20,7 @@ public class LauncherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launcher);
 
         progressBar = findViewById(R.id.progressBar);
+        preferencesManager = new PreferencesManager(getApplicationContext());
         
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
-import vn.edu.stu.project_chat_group.MainActivity;
 import vn.edu.stu.project_chat_group.R;
 
 public class SettingActivity extends AppCompatActivity {
@@ -117,8 +116,7 @@ public class SettingActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(SettingActivity.this, MainActivity.class);
-        startActivity(intent);
+        finish();
         super.onBackPressed();
     }
 }
