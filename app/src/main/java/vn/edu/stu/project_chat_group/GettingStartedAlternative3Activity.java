@@ -7,14 +7,16 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GettingStartedAlternative3Activity extends AppCompatActivity {
+import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
+public class GettingStartedAlternative3Activity extends AppCompatActivity {
+    private PreferencesManager preferencesManager;
     Button btnOk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getting_started_alternative3);
-
+        preferencesManager = new PreferencesManager(getApplicationContext());
         addControls();
         addEvents();
     }

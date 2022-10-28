@@ -87,7 +87,6 @@ public class RegisterAccountActivity extends AppCompatActivity {
                 String password = etPassword.getText().toString();
                 String email = etEmailAddress.getText().toString();
                 String emailCheck = etEmailCheck.getText().toString();
-
                 if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
                     Toast.makeText(RegisterAccountActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
                 } // nếu không nhập username hay password mà ấn nút đăng ký sẽ báo lỗi
@@ -97,7 +96,8 @@ public class RegisterAccountActivity extends AppCompatActivity {
                     Toast.makeText(RegisterAccountActivity.this, "Email not match.", Toast.LENGTH_SHORT).show();
                 }else if (TextUtils.isEmpty(firstname) || TextUtils.isEmpty(lastname)){
                     Toast.makeText(RegisterAccountActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
-                }
+                }else if(encodedImage ==null)
+                    Toast.makeText(RegisterAccountActivity.this, "Input image", Toast.LENGTH_SHORT).show();
                 else
                     register(); //đăng ký
                 }
@@ -122,7 +122,6 @@ public class RegisterAccountActivity extends AppCompatActivity {
     boolean isEmailValid(CharSequence email) {  //kiểm tra email có hợp lệ hay không
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
-
 
     private void addControls() {
         etUsername = findViewById(R.id.etUsername);
@@ -161,11 +160,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
                     preferencesManager.putString(Constant.KEY_NAME, fullName);
                     preferencesManager.putString(Constant.KEY_USERNAME, userName);
                     preferencesManager.putString(Constant.KEY_IMAGE, encodedImage);
-                    loadingBar.setTitle(R.string.creating_account);
-                    loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
-                    loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
-                    loadingBar.show();
-                    Intent intent = new Intent(RegisterAccountActivity.this, GettingStartedAlternativeActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), GettingStartedAlternativeActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 })
@@ -175,7 +170,7 @@ public class RegisterAccountActivity extends AppCompatActivity {
                 });
     }
 
-    private void loading(Boolean isLoading) {                //Khi đã hoàn thiện và bấm vào thì nút sẽ tự ẩn đi, thanh progressBar tự hiện ra
+    private void loading(Boolean isLoading) {    //Khi đã hoàn thiện và bấm vào thì nút sẽ tự ẩn đi, thanh progressBar tự hiện ra
         if (isLoading) {
             btnRegister.setVisibility(View.INVISIBLE);
             progressBar.setVisibility(View.VISIBLE);

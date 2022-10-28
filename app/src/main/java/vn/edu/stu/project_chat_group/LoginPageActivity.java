@@ -49,19 +49,20 @@ public class LoginPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        preferencesManager = new PreferencesManager(getApplicationContext());
+        if(preferencesManager.getBoolean(Constant.KEY_IS_SIGNED_IN)){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
+        setContentView(R.layout.activity_login_page);
         addControls();
         addEvents();
         checkIfDarkModeOrNot();
-        preferencesManager = new PreferencesManager(getApplicationContext());
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
 
     }
+
 
     private void addDataToFirestore(){ //quan trọng, dùng để test thêm dữ liệu vào Firestore
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -153,7 +154,6 @@ public class LoginPageActivity extends AppCompatActivity {
                     Toast.makeText(LoginPageActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
                 } // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
                 else{
-
                     signIn();
                     //addDataToFirestore();
                     //openGettingStartedActivity(); //mở giao diện Mở Đầu
@@ -195,7 +195,6 @@ public class LoginPageActivity extends AppCompatActivity {
             Toast.makeText(LoginPageActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
             return false;
         } // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
-
         return true;
     }
 
@@ -213,11 +212,7 @@ public class LoginPageActivity extends AppCompatActivity {
                         preferencesManager.putString(Constant.KEY_USER_ID,documentSnapshot.getId());
                         preferencesManager.putString(Constant.KEY_NAME, documentSnapshot.getString(Constant.KEY_NAME));
                         preferencesManager.putString(Constant.KEY_IMAGE, documentSnapshot.getString(Constant.KEY_IMAGE));
-                        loadingBar.setTitle(R.string.Signing_in);
-                        loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
-                        loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
-                        loadingBar.show();
-                        Intent intent = new Intent(LoginPageActivity.this, GettingStartedAlternativeActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), GettingStartedAlternativeActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }else

@@ -8,6 +8,9 @@
     <string name="empty_username_pass">Xin hãy nhập username và password</string>
     <string name="register_text"><u>Không có tài khoản?</u></string>
     <string name="Signing_in">Đang đăng nhập...</string>
+    <string name="Signing_out">Đăng xuất...</string>
+    <string name="Logout">Đăng xuất</string>
+    <string name="Unable_to_sign_in">Không thể đăng nhập. Xin hãy kiểm tra lại username hoặc mật khẩu của bạn</string>
     <!--Register Activity-->
     <string name="InputFirstName">Nhập Tên</string>
     <string name="InputLastName">Nhập Họ</string>
@@ -106,6 +109,8 @@
     <string name="Only_Me_sub">Chỉ mình bạn mới thấy</string>
     <string name="Archive_Stories">Kho lưu trữ</string>
     <string name="Archive_Stories_sub">Khi bật lên thì tất cả story bạn đăng sẽ được lưu vào kho lưu trữ cá nhân mà chỉ một mình bạn có thể thấy được.</string>
-
+    <!--Main Activity-->
+    <string name="select_user">Chọn người dùng</string>
+    <string name="error_can_not_load_user">Lỗi. Không thể load user. Xin hãy kiểm tra lại kết nối mạng internet</string>
 
 </resources>

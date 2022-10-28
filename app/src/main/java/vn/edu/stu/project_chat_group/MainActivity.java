@@ -1,6 +1,5 @@
 package vn.edu.stu.project_chat_group;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,7 +34,7 @@ import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 public class MainActivity extends AppCompatActivity {
 
     private PreferencesManager preferencesManager;
-    private ProgressDialog loadingBarSignout;
+
     AppCompatImageView acpMenu;
     RoundedImageView rivImageProfileMain;
     TextView tvDisplayName;
@@ -47,12 +46,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        addControls();
-
         preferencesManager = new PreferencesManager(getApplicationContext());
-        loadUsersDetails();
+        addControls();
         addEvents();
+        loadUsersDetails();
         getToken();
     }
 
@@ -63,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         acpMenu = findViewById(R.id.acpMenu);
         btnPlus = findViewById(R.id.btnPlus); //nút thêm bạn
         recyclerviewUsers = findViewById(R.id.recyclerviewUsers);
+
     }
 
     private void loadUsersDetails(){ //lấy thông tin người dùng để đặt lên bar đầu tiên
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     public void showPopup(View v) {
@@ -113,27 +110,25 @@ public class MainActivity extends AppCompatActivity {
 
     //hàm để signout thành công
     private void signOut(){
-        loadingBarSignout.setTitle(R.string.Signing_out);   //hiện thanh loading bar
-        loadingBarSignout.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
-        loadingBarSignout.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
-        loadingBarSignout.show();
+        Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT);
         FirebaseFirestore database = FirebaseFirestore.getInstance();   //lấy dữ liệu từ firebase firestore về
         DocumentReference documentReference =
                 database.collection(Constant.KEY_COLLECTION_USERS)
                         .document(preferencesManager.getString(Constant.KEY_USER_ID));
-        HashMap<String, Object> update = new HashMap<>();
-        update.put(Constant.KEY_FCM_TOKEN, FieldValue.delete());   //xoá fcm token trong firestore database đi
-        documentReference.update(update)
+        HashMap<String, Object> updates = new HashMap<>();
+        updates.put(Constant.KEY_FCM_TOKEN, FieldValue.delete());
+        documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
+                    preferencesManager.putBoolean(Constant.KEY_IS_SIGNED_IN, false);
                     preferencesManager.clear();
-                    Intent intent = new Intent(MainActivity.this, LoginPageActivity.class);
-                    startActivity(intent);
+                    Intent intent2 = new Intent(getApplicationContext(), LoginPageActivity.class);
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(new Intent(getApplicationContext(), LoginPageActivity.class));
                     finish();
                 })
                 .addOnFailureListener(e->showToase("Unable to signout"));
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -147,11 +142,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mnuSetting:
                 openSettingActivity();
                 break;
-            case R.id.mnuLogout: //signout khỏi ứng dụng
-                signOut();
-                break;
             case R.id.mnuAbout:
                 Toast.makeText(this, "Feature updating...", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.app_bar_search:
+                Toast.makeText(this, "Feature updating...", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mnuLogout: //signout khỏi ứng dụng
+                signOut();
                 break;
         }
         return super.onOptionsItemSelected(item);

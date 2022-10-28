@@ -41,6 +41,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/menu_icon"
+            app:tint="@color/material_on_primary_emphasis_high_type"
             android:layout_weight="0.1"/>
 
     </LinearLayout>
@@ -51,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.92"
         android:orientation="vertical">
+
 
         <FrameLayout
             android:layout_width="match_parent"

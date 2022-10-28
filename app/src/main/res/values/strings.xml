@@ -109,6 +109,8 @@
     <string name="Only_Me_sub">Only you can see it</string>
     <string name="Archive_Stories">Archive Stories</string>
     <string name="Archive_Stories_sub">When turned on, any stories that you post will be saved to a private archive that is only visible to you</string>
+
+    <!--Main Activity-->
     <string name="select_user">Select User</string>
     <string name="error_can_not_load_user">Error. Can not load user. Please check your internet connection</string>
 
