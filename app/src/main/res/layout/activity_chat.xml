@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:animateLayoutChanges="true"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.07">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                android:layout_weight="0.05"
+                android:layout_width="56dp"
+                android:layout_height="41dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                app:icon="@drawable/left_arrow"
+                app:iconSize="14dp"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"/>
+
+            <TextView
+                android:id="@+id/tvTitleMain"
+                android:layout_weight="0.9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="text"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnInfo"
+                android:layout_width="56dp"
+                android:layout_height="41dp"
+                android:layout_weight="0.05"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@color/material_on_primary_emphasis_high_type"
+                app:icon="@drawable/info_icon"
+                app:iconSize="40dp"
+                android:paddingLeft="10pt"
+                app:iconTint="@color/material_on_primary_emphasis_high_type"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.83"
+        android:background="@drawable/background_content_bottom"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <ProgressBar
+            android:id="@+id/progessBarChat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal|center_vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal">
+        
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/etInputMessage"
+            android:layout_weight="0.9"
+            android:hint="Type anything here..."
+            android:layout_gravity="center"
+            android:background="@drawable/background_chat_input"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:imeOptions="actionDone"
+            android:layout_marginEnd="10dp"
+            android:importantForAutofill="no"
+            android:inputType="text"/>
+
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/background_chat_input"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/send_icon"
+                android:padding="5sp"
+
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:tint="@color/material_on_primary_emphasis_medium"/>
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
