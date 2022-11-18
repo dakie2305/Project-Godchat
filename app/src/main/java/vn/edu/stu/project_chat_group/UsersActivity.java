@@ -1,6 +1,7 @@
 package vn.edu.stu.project_chat_group;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -17,11 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vn.edu.stu.project_chat_group.adapter.UsersAdapter;
+import vn.edu.stu.project_chat_group.listener.UserListener;
 import vn.edu.stu.project_chat_group.models.User;
 import vn.edu.stu.project_chat_group.utilities.Constant;
 import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener { //cần implement thêm UserLister
 
 //    private ActivityUsersBinding binding;
 
@@ -60,11 +62,9 @@ public class UsersActivity extends AppCompatActivity {
         progessBarUsers = findViewById(R.id.progessBarUsers);   //thanh progress
         tvErrorMessage= findViewById(R.id.tvErrorMessage);  //textview sẽ hiện lỗi
         recyclerviewUsers = findViewById(R.id.recyclerviewUsers);  //recycly view
-
-
     }
 
-    //Hàm lấy user từ FirebaseFirestore về
+    //Hàm lấy tất cả các users từ FirebaseFirestore về
     private void getUsers(){
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -86,11 +86,12 @@ public class UsersActivity extends AppCompatActivity {
                             user.image = queryDocumentSnapshot.getString(Constant.KEY_IMAGE);
                             user.token = queryDocumentSnapshot.getString(Constant.KEY_FCM_TOKEN);
                             user.username = queryDocumentSnapshot.getString(Constant.KEY_USERNAME);
+                            user.id = queryDocumentSnapshot.getId();
                             users.add(user);
                         }
                         //Nếu user mà nhỏ hơn 0 tức là không có user nào, hoặc là bị lỗi, hiển thị ra cái text view
                         if(users.size()>0){
-                            UsersAdapter usersAdapter = new UsersAdapter(users);
+                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
                             recyclerviewUsers.setAdapter(usersAdapter);
                             recyclerviewUsers.setVisibility(View.VISIBLE);
                         }else showErrorMessage();
@@ -108,5 +109,14 @@ public class UsersActivity extends AppCompatActivity {
         } else {
             progessBarUsers.setVisibility(View.INVISIBLE);
         }
+    }
+
+    //hàm này là custom trong UserListener
+    @Override
+    public void onUserClick(User user) {
+        Intent intent = new Intent(UsersActivity.this, ChatActivity.class);
+        intent.putExtra(Constant.KEY_USER, user); //truyền user đã bấm trong list vào ChatActivity
+        startActivity(intent);
+        finish();
     }
 }

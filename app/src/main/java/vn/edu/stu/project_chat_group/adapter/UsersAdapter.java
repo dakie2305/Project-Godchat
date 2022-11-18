@@ -12,14 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import vn.edu.stu.project_chat_group.databinding.ItemContainerUserBinding;
+import vn.edu.stu.project_chat_group.listener.UserListener;
 import vn.edu.stu.project_chat_group.models.User;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewholder>{
 
     private final List<User> users; //tạo một list chứa các clas User
 
-    public UsersAdapter(List<User> users) {
+    private final UserListener userListener; //dùng để tạo event cho các user trong List<Users>
+
+    public UsersAdapter(List<User> users, UserListener userListener) {
         this.users = users;
+        this.userListener = userListener;
     }       //sử dụng adapter tuỳ chỉnh là UsersAdapter, truyền vào list user
 
     @NonNull
@@ -53,11 +57,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewhold
         }
 
 
-
         void setUserData(User user){    //dùng để đưa tên, đưa username và đưa ảnh đại diện của người dùng lên
             binding.tvName.setText(user.name);
             binding.tvUser.setText( "@"+user.username);
             binding.imageProfileUser.setImageBitmap(getUserImage(user.image));  //để có thể lấy được ảnh đại diện, cần phải giải đoạn mã hoá ảnh đại diện
+            binding.getRoot().setOnClickListener(v-> userListener.onUserClick(user));
         }
     }
     private Bitmap getUserImage(String encodedImage){ //vì ảnh đại diện của user là dạng chuỗi string đã mã hoá, ta cần giải mã hoá để lấy ra ảnh đại diện
