@@ -59,7 +59,8 @@ public class NotificationActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(swOn.isChecked())
-                    playASound(); //phát ra tiếng ting khi bật
+                    //phát ra tiếng ting khi bật
+                    playASound();
             }
         });
         swSound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
