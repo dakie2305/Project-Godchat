@@ -104,8 +104,9 @@ public class ChatActivity extends AppCompatActivity {
         receiveUser = (User) getIntent().getSerializableExtra(Constant.KEY_USER);
         tvTitleChat.setText(receiveUser.name);
     }
+    //decode string image để tạo lại ảnh đại diện người dùng và hiện lên
     private Bitmap getBitmapFromEncodedStr(String string){
-        byte[] bytes = Base64.decode(string, Base64.DEFAULT);  //decode string image để tạo lại ảnh đại diện người dùng và hiện lên
+        byte[] bytes = Base64.decode(string, Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
         return bitmap;
     }
@@ -123,10 +124,11 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void listenMessage(){
+        //tạo custom event listener
         database.collection(Constant.KEY_COLLECTION_CHAT).
                 whereEqualTo(Constant.KEY_SENDER_ID, preferencesManager.getString(Constant.KEY_USER_ID))
                 .whereEqualTo(Constant.KEY_RECEIVER_ID, receiveUser.id)
-                .addSnapshotListener(eventListener); //tạo custom event listener
+                .addSnapshotListener(eventListener);
         database.collection(Constant.KEY_COLLECTION_CHAT)
                 .whereEqualTo(Constant.KEY_SENDER_ID, receiveUser.id)
                 .whereEqualTo(Constant.KEY_RECEIVER_ID, preferencesManager.getString(Constant.KEY_USER_ID))
@@ -150,6 +152,7 @@ public class ChatActivity extends AppCompatActivity {
                     chatMessages.add(chatMessage);
                 }
             }
+            //Sắp xếp thứ tự chat từ ngày xa nhất xuống ngày thấp nhất
             Collections.sort(chatMessages, (obj1, obj2)->obj1.dateObject.compareTo(obj2.dateObject));
             if (count==0){
                 chatAdapter.notifyDataSetChanged();
