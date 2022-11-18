@@ -23,14 +23,15 @@ public class LauncherActivity extends AppCompatActivity {
         preferencesManager = new PreferencesManager(getApplicationContext());
         
         Handler handler = new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(LauncherActivity.this, LoginPageActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
+                overridePendingTransition(R.anim.slide_up,R.anim.slide_down); //hai custom anim để tạo hiệu ứng chuyển activity
                 finish();
             }
-        },1000);
+        },1000); //delay khoảng 1s trước khi chuyển qua activy Login
     }
 }

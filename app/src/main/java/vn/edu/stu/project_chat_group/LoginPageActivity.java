@@ -50,6 +50,7 @@ public class LoginPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferencesManager = new PreferencesManager(getApplicationContext());
+        //Kiểm tra xem đã đăng nhập chưa, nếu đã đăng nhập thì chuyển thẳng vào MainActivity
         if(preferencesManager.getBoolean(Constant.KEY_IS_SIGNED_IN)){
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -77,13 +78,13 @@ public class LoginPageActivity extends AppCompatActivity {
     }
 
     private void addControls() {
-        textViewRegister = findViewById(R.id.tvRegister);
+        textViewRegister = findViewById(R.id.tvRegister); //Dòng chữ dùng để đăng ký
         btnAnonLogin = (Button) findViewById(R.id.btnAnonymousLogin); //nút đăng nhập ẩn danh
         btnLogin= findViewById(R.id.btnLogin); //nút đăng nhập bình thường
         switchMaterial = findViewById(R.id.switchDarkMode);//Nút switch dark mode
         btnGoogleLogin = findViewById(R.id.btnGoogleLogin); //nút đăng nhập google
-        etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
+        etUsername = findViewById(R.id.etUsername); //Nhập Username
+        etPassword = findViewById(R.id.etPassword); //Nhập password
         progessBarLogin = findViewById(R.id.progessBarLogin);
 
         loadingBar = new ProgressDialog(LoginPageActivity.this);
@@ -115,23 +116,25 @@ public class LoginPageActivity extends AppCompatActivity {
         btnAnonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //tạo hai button ok và cancel để tiếp tục nhập username mới, không cần password
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginPageActivity.this);
                 builder.setTitle("Input Username");
                 final EditText input = new EditText(LoginPageActivity.this);
                 input.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
                 builder.setView(input);
-                //tạo hai button ok và cancel để tiếp tục nhập username mới, không cần password
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String username = input.getText().toString();
                         if (TextUtils.isEmpty(username)) {
+                            // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
                             Toast.makeText(LoginPageActivity.this, R.string.empty_username_pass, Toast.LENGTH_SHORT).show();
-                        } // nếu không nhập username hay password mà ấn nút Login sẽ báo lỗi
+                        }
                         else {
                             loadingBar.setTitle(R.string.creating_account);
                             loadingBar.setMessage(getResources().getString(R.string.please_wait)); //Chỗ này phải hơi rườm rà xíu nó mới chịu nhận R.string.please_wait
-                            loadingBar.setCanceledOnTouchOutside(true); // bấm ngoài sẽ tắt loading bar
+                            // bấm ngoài sẽ tắt loading bar
+                            loadingBar.setCanceledOnTouchOutside(true);
                             loadingBar.show();
                             openGettingStartedActivity();
                         }

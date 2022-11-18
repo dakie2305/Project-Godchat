@@ -1,13 +1,13 @@
 package vn.edu.stu.project_chat_group.SettingMainOptions;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -35,7 +35,7 @@ public class LanguageChangeActivity extends AppCompatActivity {
     private void addControls() {
         btnBack = findViewById(R.id.btnBack); //nút back trở về setting chính
 
-        radViet = findViewById(R.id.radViet);
+        radViet = findViewById(R.id.radViet); //hai lựa chọn ngôn ngữ
         radEng = findViewById(R.id.radEnglish);
         radioGroup = findViewById(R.id.radGroup);
     }
@@ -69,7 +69,7 @@ public class LanguageChangeActivity extends AppCompatActivity {
             }
         });
     }
-
+    //kiểm tra ngôn ngữ trong máy
     private void checkSystemLanguage() {
         loc = getResources().getConfiguration().getLocales().get(0).toString();
         //Toast.makeText(LanguageChangeActivity.this, loc, Toast.LENGTH_SHORT).show(); //để test xem loc sẽ nhận được locale tag ra sao
