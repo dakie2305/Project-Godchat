@@ -106,6 +106,7 @@
             android:layout_marginRight="10dp"
             android:backgroundTint="@color/cardview_dark_background"
             android:textSize="16dp"
+            android:textColor="@color/white"
             android:id="@+id/btnCommitChange"
             android:text="@string/Commit_Change"/>
     </LinearLayout>
@@ -126,6 +127,7 @@
             android:layout_marginRight="10dp"
             android:backgroundTint="@color/design_default_color_error"
             android:textSize="16dp"
+            android:textColor="@color/white"
             android:id="@+id/btnCancelChange"
             android:text="@string/Cancel"/>
     </LinearLayout>

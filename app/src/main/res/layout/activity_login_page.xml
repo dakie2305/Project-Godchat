@@ -98,7 +98,7 @@
         android:id="@+id/framelayoutLoginButton">
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_rounded_button"
             android:text="@string/Login_Btn"
@@ -118,7 +118,7 @@
 
     <Button
         android:id="@+id/btnGoogleLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/corner_rounded_button"
@@ -131,7 +131,7 @@
 
     <Button
         android:id="@+id/btnAnonymousLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/corner_rounded_button"
