@@ -25,7 +25,12 @@ public class FullNameSettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_name_setting);
         addControls();
+        getData();
         addEvents();
+    }
+
+    private void getData() {
+        etFirst.setText("");
     }
 
     private void addControls() {
