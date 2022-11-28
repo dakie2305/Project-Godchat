@@ -1,8 +1,10 @@
 package vn.edu.stu.project_chat_group.SettingMainOptions;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import vn.edu.stu.project_chat_group.R;
 
 public class VideoSettingActivity extends AppCompatActivity {
 
