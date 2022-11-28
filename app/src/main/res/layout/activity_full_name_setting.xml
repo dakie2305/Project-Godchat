@@ -86,6 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:textSize="16dp"
             android:text="@string/Please_Note"/>
     </LinearLayout>
