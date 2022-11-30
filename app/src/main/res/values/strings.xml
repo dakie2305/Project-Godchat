@@ -113,6 +113,8 @@
     <!--Main Activity-->
     <string name="select_user">Select User</string>
     <string name="error_can_not_load_user">Error. Can not load user. Please check your internet connection</string>
+    <!--Video Activity-->
+    <string name="video_settting">Video Settting</string>
 
 
 </resources>
