@@ -113,6 +113,8 @@
     <!--Main Activity-->
     <string name="select_user">Select User</string>
     <string name="error_can_not_load_user">Error. Can not load user. Please check your internet connection</string>
+    <string name="save_on_capture">Save on capture</string>
+    <string name="save_on_capture_sub">Save new photos that you take in app to your Gallery</string>
 
 
 </resources>
