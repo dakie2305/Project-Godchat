@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvReceivedMessage"
             android:background="@drawable/background_received_message"
-            android:text="testaaaaaaaaaaaaaaaaaaaaaaaewawaaaaaaaaaaa"
+            android:text="testaaaaaaaaaaaaaaaaaaaaaaaewawaaaaaaaaaaatestaaaaaaaaaaaaaaaaaaaaaaaewawaaaaaaaaaaatestaaaaaaaaaaaaaaaaaaaaaaaewawaaaaaaaaaaa"
             android:textSize="16dp"
             android:textColor="@color/white"
             android:padding="12dp"
