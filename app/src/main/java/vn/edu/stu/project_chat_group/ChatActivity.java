@@ -13,8 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -41,6 +44,8 @@ public class ChatActivity extends AppCompatActivity {
     MaterialButton btnBack, btnInfo;
 
     RecyclerView chatRecycleView;
+    private String conversationID = null;
+
     private ProgressBar progessBarChat;
 
     private User receiveUser;
@@ -117,6 +122,20 @@ public class ChatActivity extends AppCompatActivity {
         message.put(Constant.KEY_MESSAGE, etInputMessage.getText().toString());
         message.put(Constant.TIMESTAMP, new Date());
         database.collection(Constant.KEY_COLLECTION_CHAT).add(message);
+        if(conversationID!=null){
+            updateConversation(etInputMessage.getText().toString());
+        }else{
+            HashMap<String, Object> conversation = new HashMap<>();
+            conversation.put(Constant.KEY_SENDER_ID, preferencesManager.getString(Constant.KEY_USER_ID));
+            conversation.put(Constant.KEY_SENDER_NAME, preferencesManager.getString(Constant.KEY_NAME));
+            conversation.put(Constant.KEY_SENDER_IMAGE, preferencesManager.getString(Constant.KEY_IMAGE));
+            conversation.put(Constant.KEY_RECEIVER_ID, receiveUser.id);
+            conversation.put(Constant.KEY_RECEIVER_NAME, receiveUser.name);
+            conversation.put(Constant.KEY_RECEIVER_IMAGE, receiveUser.image);
+            conversation.put(Constant.KEY_LAST_MESSAGE, etInputMessage.getText().toString());
+            conversation.put(Constant.TIMESTAMP, new Date());
+            addConversation(conversation);
+        }
         etInputMessage.setText("");
     }
     private String formatDateTime(Date date){
@@ -163,5 +182,43 @@ public class ChatActivity extends AppCompatActivity {
             chatRecycleView.setVisibility(View.VISIBLE);
         }
         progessBarChat.setVisibility(View.GONE);
+        if(conversationID==null){
+            checkConversation();
+        }
+    };
+
+    private void addConversation(HashMap<String, Object> conversation){
+        database.collection(Constant.KEY_COLLECTION_CONVERSATION)
+                .add(conversation)
+                .addOnSuccessListener(documentReference -> conversationID = documentReference.getId());
+    }
+
+    private void updateConversation(String message){
+        DocumentReference documentReference = database.collection(Constant.KEY_COLLECTION_CONVERSATION).document(conversationID);
+        documentReference.update(
+                Constant.KEY_LAST_MESSAGE, message,Constant.TIMESTAMP, new Date()
+        );
+    }
+
+    private void checkConversationRemotely(String senderID, String receiverID){
+        database.collection(Constant.KEY_COLLECTION_CONVERSATION)
+                .whereEqualTo(Constant.KEY_SENDER_ID, senderID)
+                .whereEqualTo(Constant.KEY_RECEIVER_ID,receiverID)
+                .get()
+                .addOnCompleteListener(conversationOnCompleteListener);
+    }
+
+    private void checkConversation(){
+        if(chatMessages.size()!=0){
+            checkConversationRemotely(preferencesManager.getString(Constant.KEY_USER_ID), receiveUser.id);
+            checkConversationRemotely(receiveUser.id, preferencesManager.getString(Constant.KEY_USER_ID));
+        }
+    }
+
+    private final OnCompleteListener<QuerySnapshot> conversationOnCompleteListener = task->{
+      if(task.isSuccessful() && task !=null &&task.getResult().getDocuments().size()>0){
+          DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+          conversationID = documentSnapshot.getId();
+      }
     };
 }

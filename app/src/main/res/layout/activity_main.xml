@@ -72,11 +72,23 @@
                 app:iconTint="@color/grey"
                 android:layout_gravity="bottom|end"
                 />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/conversationRecyclerView"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarRecentConvo"
+                android:layout_gravity="center"/>
 
         </FrameLayout>
-
-
-
 
     </LinearLayout>
     <LinearLayout
