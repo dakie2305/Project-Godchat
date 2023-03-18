@@ -15,23 +15,28 @@ import java.util.Calendar;
 import java.util.Date;
 
 import vn.edu.stu.project_chat_group.R;
+import vn.edu.stu.project_chat_group.utilities.Constant;
+import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
 public class FullNameSettingActivity extends AppCompatActivity {
+    private PreferencesManager preferencesManager;
     MaterialButton btnCommit, btnCancel, btnBack;
     EditText etFirst, etLast;
+
+
     String firstname = "", famname ="", fullname="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_name_setting);
+        preferencesManager = new PreferencesManager(getApplicationContext());
+
         addControls();
-        getData();
         addEvents();
     }
 
-    private void getData() {
-        etFirst.setText("");
-    }
+
 
     private void addControls() {
         btnCommit = findViewById(R.id.btnCommitChange);
@@ -39,6 +44,10 @@ public class FullNameSettingActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
         etFirst = findViewById(R.id.etFirstNameInSetting);
         etLast = findViewById(R.id.etFamilyNameInSetting);
+
+        fullname=  preferencesManager.getString(Constant.KEY_NAME);
+        etFirst.setText(fullname.substring(0, fullname.lastIndexOf(' '))); //tách tên riêng ra khỏi full name
+        etLast.setText(fullname.split(" (?!.* )")[1]); //tách họ khỏi full name
     }
     private void addEvents() {
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -69,11 +78,10 @@ public class FullNameSettingActivity extends AppCompatActivity {
 
     private void commitChange() {
         getNameFromEditText();
-        lockButtonFor15Days();
-        Intent intent = new Intent();
-        intent.putExtra("fullname", fullname);
-        setResult(2,intent);
-        finish();
+        //lockButtonFor15Days();
+        preferencesManager.putString(Constant.KEY_NAME, fullname); //đã thay đổi tên
+
+
     }
 
     private void lockButtonFor15Days() { //hàm khoá nút 15 ngày nếu đã bấm đổi tên thành công
