@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +28,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import vn.edu.stu.project_chat_group.adapter.ChatAdapter;
 import vn.edu.stu.project_chat_group.models.ChatMessage;
@@ -36,10 +36,10 @@ import vn.edu.stu.project_chat_group.models.User;
 import vn.edu.stu.project_chat_group.utilities.Constant;
 import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends BaseActivity {
     EditText etInputMessage;
     AppCompatImageView btnSendMessage;
-    TextView tvTitleChat;
+    TextView tvTitleChat, tvAvailability;
 
     MaterialButton btnBack, btnInfo;
 
@@ -55,7 +55,7 @@ public class ChatActivity extends AppCompatActivity {
     private PreferencesManager preferencesManager;
     private FirebaseFirestore database;
 
-
+    private Boolean isReceiverAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +101,7 @@ public class ChatActivity extends AppCompatActivity {
         chatMessages = new ArrayList<>();
         database=FirebaseFirestore.getInstance();
         progessBarChat = findViewById(R.id.progessBarChat);
+        tvAvailability = findViewById(R.id.tvAvailability);
 
         chatRecycleView = findViewById(R.id.chatRecycleView);
     }
@@ -140,6 +141,27 @@ public class ChatActivity extends AppCompatActivity {
     }
     private String formatDateTime(Date date){
         return new SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.getDefault()).format(date);
+    }
+
+    private void listenAvailabilityOfReceiver(){
+        database.collection(Constant.KEY_COLLECTION_USERS).document(
+                receiveUser.id
+        ).addSnapshotListener(ChatActivity.this,(value, error)->{
+           if(error!=null){
+               return;
+           }
+           if(value!=null){
+               if(value.getLong(Constant.KEY_AVAILABILITY) != null){
+                   int availability = Objects.requireNonNull(value.getLong(Constant.KEY_AVAILABILITY)).intValue();
+                   isReceiverAvailable = availability == 1;
+               }
+           }
+           if(isReceiverAvailable){
+               tvAvailability.setVisibility(View.VISIBLE);
+           }else{
+               tvAvailability.setVisibility(View.GONE);
+           }
+        });
     }
 
     private void listenMessage(){
@@ -221,4 +243,10 @@ public class ChatActivity extends AppCompatActivity {
           conversationID = documentSnapshot.getId();
       }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
+    }
 }

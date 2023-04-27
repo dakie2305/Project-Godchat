@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,14 +34,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import vn.edu.stu.project_chat_group.SettingMainOptions.SettingActivity;
+import vn.edu.stu.project_chat_group.adapter.RecentConversationAdapter;
 import vn.edu.stu.project_chat_group.listener.ConversationListener;
 import vn.edu.stu.project_chat_group.models.ChatMessage;
-import vn.edu.stu.project_chat_group.adapter.RecentConversationAdapter;
 import vn.edu.stu.project_chat_group.models.User;
 import vn.edu.stu.project_chat_group.utilities.Constant;
 import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
-public class MainActivity extends AppCompatActivity implements ConversationListener {
+public class MainActivity extends BaseActivity implements ConversationListener {
 
     private PreferencesManager preferencesManager;
 

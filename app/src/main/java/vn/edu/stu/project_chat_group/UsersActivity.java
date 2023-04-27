@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
@@ -23,7 +22,7 @@ import vn.edu.stu.project_chat_group.models.User;
 import vn.edu.stu.project_chat_group.utilities.Constant;
 import vn.edu.stu.project_chat_group.utilities.PreferencesManager;
 
-public class UsersActivity extends AppCompatActivity implements UserListener { //cần implement thêm UserLister
+public class UsersActivity extends BaseActivity implements UserListener { //cần implement thêm UserLister
 
 //    private ActivityUsersBinding binding;
 
